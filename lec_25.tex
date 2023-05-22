@@ -1,0 +1,99 @@
+\lecture{25}{ven 18 mag 2023 14:50}{Flusso turbolento}
+I flussi che partono da una certa condizione stazionaria hanno un profilo di velocità del tipo:
+\[
+\underline{U}\left( \underline{x}\right)
+\]
+Nel  nostro caso particolare abbiamo visto una componente sola della velocità in una sola direzione e dunque 
+\[
+  U\left( y\right)  \underline{e}_x
+\]
+Ma in generale $ \underline{x} $. Quando il flusso diventa instabile si ha che il profilo di velocità è dipendente dal tempo:
+\[
+  \underline{U}_1\left( \underline{x},t\right) 
+\]
+Aumentando il numero di Reynolds $ Re $ il concetto si complica (vedi lezione precendente) poichè la turbolenza si propaga su tutte le diverse scale.
+quando la turbolenza prende piede possiamo trattare il fluido con metodi statistici.
+Questo è necessario perchè una legge è molto difficile da ottenere (o potrebbe non esistere).
+Per esempio si possono verificare fenomeni intermittenti che passano da flusso laminare a turbolento in maniera non periodica o prevedibile (questo succede a circa $ 5000 Re$): in questo caso se faccio un analisi a punto fisso ho un tipo di flusso a tempo fisso un altro.
+Devo necessariamente passare all'analisi statistica.\\
+In generale una proprietà di un flusso turbolento è del tipo 
+\[
+  \underline{U}\left( \underline{x},t\right) =\underline{U}\left( \underline{x}\right) +\underline{u^{\prime}}\left( \underline{x},t\right) 
+\]
+con $ \underline{u}^{\prime} $ \textit{parte} \textit{turbolenta}. Questo vale per ogni variabile, per esempio per la pressione:
+\[
+  \underline{P}\left( \underline{x},t\right) =\underline{P}\left( \underline{x}\right) +\underline{u^{\prime}}\left( \underline{x},t\right) 
+\]
+La struttura ha molte frequenze, molti modi, lo spettro è continuo.
+Queste complicazioni derivano dal termine convettivo delle equazioni di Navier-Stokes \cref{eq:NV_comp_vett}:
+\[
+  \left( \underline{u}\cdot \underline{\nabla}\right) \underline{u}
+\]
+in 3D ci sono vortici e rotazioni di ogni dimensione e tredimensionali. Questi vortici partono dalla dimensione della macroscala ($ D $).
+Scendendo a scale sempre più piccole arrivo a quella molecolare dove la turbolenza fa vibrare le molecole e si dissipa in energia termica.\\
+Il rapporto tra la micro scala ($ \eta $) e la macro scala ($ L $) va come:
+\begin{equation}
+	\frac{\eta}{L}\approx Re^{-\frac{3}{4}}
+\end{equation}
+Questa legge viene chiamata: \emph{Bilancio di energia '41}\\
+L'idea è che il flusso sia caratterizzabile della macroscala.
+\[ 
+  \frac{1}{2}\rho U ^2
+\]
+Ragioniamo sugli ordini di grandezza, $ U ^2 \approx \frac{En}{Kg} \approx \Delta U ^2 $\\
+Per la potenza tutto lo stesso ragionamento diventa:
+\[
+  \frac{En}{t} \sim \frac{\Delta U ^2}{t} \sim \frac{\Delta U ^3}{L}
+\]
+Ora cerchiamo di trovare come possiamo definire $ \eta $. Sappiamo che $ \eta $ è definito come:
+\[
+	\eta =  \overline{\varepsilon} ^{a} \nu^{b}   
+\]
+Se analizzo dimensionalmente trovo che:
+\[
+	\frac{l}{t^0}=\frac{l^{2a}}{t^{3a}} \cdot \frac{l ^{2b}}{t ^{b}}  
+\]
+avrò dunque un sistema del tipo
+\begin{equation*}
+  \begin{cases}
+    2a+2b = 1 \rightarrow b = -3a\\
+    3a + b = 0 \rightarrow a = -\frac{1}{4}
+  \end{cases}
+\end{equation*}
+Sostituisco e trovo l'equazione $ \eta=\nu ^{\frac{3}{4}} \overline{\varepsilon} ^{-\frac{1}{4}} $
+Come visto precendentemente $ \frac{\Delta ^{3}}{L} = \overline{\varepsilon} $ e dunque:
+\[
+	\LARGE
+	Re = \frac{\Delta U L}{\nu} \to Re = \frac{\cancel{\overline{\varepsilon}^{\frac{1}{3}}}L ^{\frac{1}{3}}L}{\nu ^{\frac{4}{3}}\cancel{\overline{\varepsilon}^{\frac{1}{3}}}}
+\]
+E trovo che 
+\[
+	Re = \frac{L ^{\frac{4}{3}}}{\eta ^{\frac{4}{3}}} = \left( \frac{L}{\eta} \right)^{\frac{4}{3}}
+\]
+Questa legge è molto importante.
+Ma quali sono le ipotesi che limitano i flussi ai quali possono essere applicati?
+Come detto in precedenza la velocità di un flusso turbolento può essere scritta come:
+\[
+	\underline{U} + \underline{u}\left( \underline{x} ,t \right)
+\]
+Le tre veloctià sono dunque $ u;\, v;\,w $ e la velocità media lungo le tre direzioni è:
+\[
+  \overline{u}^2;\,\overline{v}^2;\,\overline{w}^2
+\]
+che possono essere scritte come 
+\begin{equation*}
+	\overline{u_1u_1};\,\overline{u_2u_2};\,\overline{u_3u_3}
+\end{equation*}
+Per valutare l'anisotropia di un flusso posso calcolare il valore $ \overline{uv} $.
+Nella turbolenza isotropa la fluttuazione incrociata (cioè $ uv $) non è correlata (cioè $ \overline{uv} \simeq 0 $).
+In genere se $ \overline{uv} \neq 0$ significa che $ u $ e $ v $ non sono libere allo stesso modo. 
+In questo caso chiamiamo la turbolenza \emph{anisotropa}.\\
+Se prendo in considerazione una sola componente $ u_1 \left(\underline{x},t\right)  $ incontro dei problemi di misurazione:
+se misuro $ u_1 \left( x_1,t \right) $, cioè a punto fisso trovo un certo flusso, se misuro $ u_1 \left( x, \tau \right) $ cioè a tempo fisso trovo tutto un altro flusso.
+Devo analizzare il flusso con altri metodi.\\
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% TeX-master: "master"
+%%% End:

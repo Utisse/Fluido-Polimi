@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg588"
+   width="997.84637"
+   height="946.30194"
+   viewBox="0 0 997.84637 946.30194"
+   sodipodi:docname="ip_continuo.svg"
+   inkscape:export-filename="../../current_course/figures/ip_cont.pdf"
+   inkscape:export-xdpi="10.497125"
+   inkscape:export-ydpi="10.497125"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs592">
+    <rect
+       x="18.815118"
+       y="26.548805"
+       width="91.137725"
+       height="54.682629"
+       id="rect543" />
+    <rect
+       x="68.387136"
+       y="59.357191"
+       width="34.954326"
+       height="65.911149"
+       id="rect844" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview590"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="0.79960728"
+     inkscape:cx="1.8759209"
+     inkscape:cy="487.11412"
+     inkscape:window-width="1906"
+     inkscape:window-height="1120"
+     inkscape:window-x="5"
+     inkscape:window-y="47"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g596">
+    <inkscape:page
+       x="0"
+       y="0"
+       id="page594"
+       width="997.84637"
+       height="946.30194" />
+  </sodipodi:namedview>
+  <g
+     id="g596"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,1.3333333,0,2.0990881e-5)">
+    <g
+       id="g598">
+      <g
+         id="g600">
+        <path
+           d="m 104.23,5.426 v 620.32 h 638.727"
+           style="fill:none;stroke:#000000;stroke-width:5.66929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path602" />
+      </g>
+      <g
+         id="g604"
+         transform="rotate(90)">
+        <path
+           d="M 21.016,-121.238 4.008,-104.23 21.016,-87.223"
+           style="fill:none;stroke:#000000;stroke-width:5.66929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path606" />
+      </g>
+      <g
+         id="g608"
+         transform="scale(-1)">
+        <path
+           d="m -727.367,-642.758 -17.008,17.012 17.008,17.008"
+           style="fill:none;stroke:#000000;stroke-width:5.66929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path610" />
+      </g>
+      <g
+         id="g612">
+        <path
+           d="m 103.66,272.031 28.469,-16.73 c 0,0 14.094,21.633 13.469,23.293 l 20.269,-23.094 23.672,20.656 28.418,-35.676 14.977,52.582 21.644,-50.718 20.797,55.457 c 0,0 13.902,-51.848 12.074,-57.742 l 23.317,57.195 19.992,-53.352 27.883,92.692 15.644,-160.864 27.867,153.383 6.91,-129.129 22.754,115.106 29.286,-60.774 23.48,32.262 16.133,-23.883 26.32,9.336 h 219.512"
+           style="fill:none;stroke:#4561b7;stroke-width:5.66929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path614" />
+      </g>
+      <g
+         id="g616">
+        <path
+           d="M 584.617,134.773 V 650.168"
+           style="fill:none;stroke:#b4871c;stroke-width:5.66929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path618" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#000000;stroke:none;stroke-width:5.6693;fill-opacity:1"
+       x="701.24731"
+       y="671.93152"
+       id="text850"><tspan
+         sodipodi:role="line"
+         id="tspan848"
+         style="stroke-width:5.66929;stroke:none;fill:#000000;fill-opacity:1"
+         x="701.24731"
+         y="671.93152">$v$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.6693"
+       x="30.011049"
+       y="44.684223"
+       id="text1103"><tspan
+         sodipodi:role="line"
+         id="tspan1101"
+         style="stroke-width:5.66929"
+         x="30.011049"
+         y="44.684223">$\rho$</tspan></text>
+  </g>
+</svg>

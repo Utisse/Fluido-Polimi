@@ -1,0 +1,56 @@
+\lecture{11}{mar 20 mar 2023 14:30}{Similitudine Dinamica}
+
+\section{Similitudine Dinamica}
+Devo semplicemente guardare il numero di Reynolds:
+\begin{equation}
+  \label{eq:numero_reynolds}
+  Re =\frac{\rho uD}{\mu }= \frac{uD}{\nu }
+\end{equation}
+
+\subsection{Teorema di Buckingham}
+Date $ n $ variabili e $ k $ grandezze fondamentali il teorema di Buckingham afferma che il problma h $ n-k $ `gruppi` (anche detti parametri) adimensionali.\\
+Prendiamo in considerazione le equazioni di Navier-Stokes. \\
+Abbiamo $ n=9 $ variabili
+\[
+  x_i,t,u_i,P,g_i
+\]
+e $ k=6 $ grandezze
+\[
+  L,\frac{1}{T}=\Omega ,U,\rho,\mu,\abs{g} 
+\]
+Dunque per il teorema di Buckingham ho 3 parametri. Definisco 
+\[
+  x_i^*=\frac{x_i}{L}, t^*=\Omega t, u_i^*=\frac{u_i}{U},P^*=\frac{P}{\rho U^2},g_i^*=\frac{g_i}{\abs{g}}
+\]
+Posso far diventare adimensionale Navier-Stokes, trovando
+\[
+  t = \frac{t^*}{\Omega},x_i=x_i^*L, \dots 
+\]
+\[
+  U\Omega \pdev{u^*}{t^*}+\frac{U^2}{L}\underline{u}^*\cdot \underline{\nabla}^*\underline{u}^* = -\frac{U}{L}\underline{\nabla} ^*P^*+g \underline{g}^*+ \frac{\mu}{\rho }\frac{U}{L^2}\underline{\nabla}^{*2} \underline{u}^*
+\]
+Riscrivo per mettere in evidenza i coefficienti adimensionali
+\[
+  \underbrace{{\left( \frac{\Omega L}{U}\right)}}_{St} + \underline{u}^*\cdot \underline{\nabla} ^*\underline{u}^*=-\underline{\nabla} ^*P^*+\underbrace{{\left( \frac{gL}{U}\right)}}_{\frac{1}{Fn^2}}\underline{g}^* + \underbrace{{\left( \frac{\mu}{\rho UL}\right) }}_{\frac{1}{Re}}\nabla ^{*2}\underline{u}^*
+\]
+Dunque abbiamo trovato i tre parametri richiesti dal teorema di Buckingham:
+\begin{itemize}
+  \large
+\item \textbf{Strouhal}
+  \begin{equation}
+    St = \frac{{\Omega L}}{U} = \frac{\text{Accelerazione instazionaria}}{\text{Accelerazione convettiva}}
+  \end{equation}
+\item \textbf{Froude}
+  \begin{equation}
+    Fr = \frac{U}{\sqrt{gL}}= \frac{\text{Forza di inerzia}}{\text{Forza peso}}
+  \end{equation}
+\item \textbf{Reynolds}
+  \begin{equation}
+    Re = \frac{{\rho LU}}{\mu } = \frac{\text{Forze di inerzia}}{\text{Forze Viscose}}
+  \end{equation}
+\end{itemize}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

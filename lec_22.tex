@@ -1,0 +1,124 @@
+\lecture{22}{gio 11 mag 2023 11:48}{Equazione di Von Karman}
+
+\[
+  \frac{{\delta \left( x\right) }}{x} = \frac{1}{\sqrt{Re}}\rightarrow  \delta \left( x\right) = x \sqrt{{\frac{\nu}{ax^nx}}}=\sqrt{\frac{\nu}{a}}x^{\frac{{1-n}}{2}}
+\]
+\begin{equation*}
+  \delta \left( x\right) 
+  \begin{cases}
+	  \text{Cresce } n<1 \quad \left( n=0\rightarrow  \text{ Blasius} \right)\\
+    \text{Costante } n =1 \\
+    \text{Decresce } n> 1  
+  \end{cases}
+\end{equation*}
+Equazione di 
+\begin{equation}
+  f^{\prime\prime\prime}+\frac{{n+1}}{2}ff^{\prime\prime}-nf^{\prime2}+n=0
+\end{equation}
+Le condizioni al contorno sono le stesse dell'equazione di Blasius \cref{eq:blasius} 
+\begin{equation*}
+  \begin{cases}
+    \eta =0:\,\, f = f^{\prime}=0\\
+    \eta \to :\,\, f^{\prime}\to 1
+  \end{cases}
+\end{equation*}
+Per $ n>0 $: un fluido si scontra con un diedro. L'angolo che che si forma è $ \pi \theta = 2\frac{\pi n}{n+1} $ e $ U =ax^n $  Infatti $ \delta \left( x\right)  $ sarà:
+\[
+  \delta \left( x\right)  = \sqrt{\frac{\nu}{a}}x^{\frac{1-n}{2}}
+\]
+\begin{equation*}
+  \delta
+  \begin{cases}
+    \text{ Cresce } n<1\\
+    \text{ Costante } n=1\\
+    \text{ Decresce} n>1
+  \end{cases}
+\end{equation*}
+Quando $ n<0  $
+%% TODO: RECUPERA
+Vediamo lo sforzo a parete $ t_w $ 
+\[
+	\tau _w = \mu  \left \frac{d u}{d y}\right|_{y=0} = \mu a x^{\frac{{3n-1}}{2}}f^{\prime\prime}_0 \sqrt{\frac{a}{\nu }}
+\]
+\begin{equation*}
+  \large
+  \begin{cases}
+    n>\frac{1}{3}: \tau_w \text{ cresce}\\ 
+    n=\frac{1}{3}: \tau_w \text{ costante}\\ 
+    n>\frac{1}{3}: \tau_w \text{ decresce} 
+  \end{cases}
+\end{equation*}
+Nella zona esterna:\\
+Equazione di bernulli flusso esterno: $  $ 
+\begin{gather*}
+  
+\end{gather*}
+
+Nella zona interna, sicuramente valgono le equazioni di Prandlt:\\
+Equazione strato limite a parete: $ u\pdev{u}{x}+v\pdev{u}{y}=-\frac{1}{\rho }\pdev{P}{x}+ \nu \pdev{^2P}{x^2}$
+\\
+Se  il gradiente di pressione è favorevole, il flusso è accelerato e lo strato limite tende a diminuire:\\
+In caso di gradiente avverso:
+\begin{equation*}
+  \pdev{P}{s}\gtrless 0 \rightarrow 
+  \begin{cases}
+    \pdev{U}{s}\gtrless 0\\
+    
+  \end{cases}
+\end{equation*}
+C'è un limite al cambio di curvatura, quando la curva diventa molto covessa una curva di velocità diventa convessa.
+C'è ricircolo e dunque delle velocità negative: il flusso si è \emph{separato}.
+Il punto di inizio di separazione è quando $ \left( \pdev{u}{y}\right)_0 = 0  $.\\
+La condizione di gradiente avverso
+
+\section{Equazione di Von Karman}
+
+\begin{equation*}
+  \begin{cases}
+    \pdev{u}{x}+\pdev{v}{y}=0\\
+    u\pdev{u}{x}+v\pdev{u}{y}-\nu \pdev{^2u}{y^2}=U\frac{d U}{d x}
+  \end{cases}
+\end{equation*}
+Integriamo analizzando in primis $ v\pdev{u}{y} $ 
+\[
+  \displaystyle{\int_{0}^{\infty }}v\pdev{u}{y}dy = \cancel{{\left[ v\left( u-U\right) \right] ^\infty _0}} - \displaystyle{\int_{0}^{\infty }}\left( u-U\right) \frac{d v}{d y}dy=
+\]
+
+\[
+  =+\displaystyle{\int_{0}^{\infty }}\left( u-U\right) \frac{d u}{d x}dy
+\]
+\[
+  \displaystyle{\int_{0}^{\infty }}\left[  u\pdev{u}{x}dy+\left( u-U\right) \pdev{u}{x}-U\frac{d U}{d x}\right] dy=
+  \displaystyle{\int_{0}^{\infty }}\nu \pdev{^2u}{y^2}dy=\left \nu \pdev{u}{y}\right|_0^\infty  = - \nu \left( \pdev{u}{y}\right) _0=-\frac{1}{\rho }\tau _w 
+\]
+\[
+  \frac{d }{d x}\displaystyle{\int_{0}^{\infty }}\left( u^2-Uu\right) dy + \frac{d U}{d x}\displaystyle{\int_{0}^{\infty }} \left( u-U\right) dy = -\frac{1}{\rho }\tau _w
+\] 
+\[
+  \frac{d }{d x}\displaystyle{\int_{0}^{\infty }}U^2\left( \frac{u^2}{U^2}-\frac{u}{U}\right) dy + \frac{d U}{d x}U\displaystyle{\int_{0}^{\infty }}\left( \frac{u}{U}-1\right) dy = -\frac{1}{\rho}\tau _w
+\]
+\[
+  -\frac{d }{d x}\left[ U^2\displaystyle{\int_{0}^{\infty }}\frac{u}{U}\left( 1-\frac{u}{U}\right) dy\right] -\frac{d U}{d x}U\displaystyle{\int_{0}^{\infty }}\left( 1-\frac{u}{U}\right) dy = -\frac{1}{\rho }\tau _w
+\]
+I termini sono diventati gli spessori:
+\begin{equation}
+  \label{eq:von_karman}
+  \frac{d }{d x}\left( U^2\theta \right)  + \frac{d U}{d x}U\delta ^*=\frac{1}{\rho }\tau _w
+\end{equation}
+Abbiamo trovato l'equazione di \emph{Von Karman}. La risoluzione non è banale ma posso aggiungere relazioni costitutive e rendere la risoluzione più veloce e semplice rispetto alle equazioni di Prandlt. Le relazioni costitutive sono del tipo:
+\[
+  F\left( \theta ,\delta^*,\tau _w\right) =0
+\]
+Lo sforzo a parete $ \tau _w $ è una forza per area (Pascal).
+Se la volessimo adimensionalizzare troviamo $ C_f=\frac{\tau_w}{\frac{1}{2}\rho U^2} $.
+Introduciamo anche il fattore di forma $ H =\frac{{\delta^*}}{\theta } $ (aiuta a capire se lo strato limite si separa).
+Se introduco questi parametri all' interno dell'equazione di Von Karman \cref{eq:von_karman} trovo:
+\begin{equation}
+  \frac{d \theta }{d x}= \frac{C_f}{2}-\frac{\theta}{U}\frac{d U}{d x}\left( 2+H\right) 
+\end{equation}
+questa equazione è molto più semplice da trattare.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

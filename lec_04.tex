@@ -1,0 +1,154 @@
+\lecture{4}{gio 02 mar 2023 14:30}{Linee di Corrente e Deformazione}
+\subsection{Linee di corrente, curve di emissione e traiettorie}
+
+\subsubsection*{Linee di corrente}
+La linea di corrente è la linea tangente in ogni punto al vettore velocità.
+La sua definizione matematica è la seguente:
+\begin{equation}
+  \frac{dx}{u}=\frac{dy}{v}=\frac{dz}{w}
+\end{equation}
+Introduciamo inoltre il concetto di \emph{tubo di flusso}: Un tubo di flusso è definito dallo spazio individuato dalla superficie tubolare che si forma tracciando una linea di flusso passante per ogni punto di una curva chiusa che non sia essa stessa una linea di flusso. Tale superficie non verrà mai attraversata dal fluido stesso nell'istante considerato.
+
+\subsubsection{Curve di emissione}
+Dette anche curve di fumo, poichè possono essere visualizzate come flussi di fumo rilasciato ad un certo istante t.
+
+\subsubsection{Traiettoria}
+La traiettoria è definita come il luogo dei punti occupati da una stessa particella al variare di $ t $\\
+Se il flusso è stazionario le curve di emissione e le traiettorie coincidono. Le linee di corrente possono variare nel tempo, dunque possono non coincidere con le traiettorie.
+
+\subsection{Deformazione dei fluidi}
+Dato l'attrito delle pareti e la \textit{no} \textit{slip} \textit{condition} i volumetti si deformano. In particolare possono ruotare e/o stirarsi.\\
+
+\subsubsection{Rotazioni inifinitesime}
+\begin{equation}
+  \label{eq:rotazioni_infinitesime}
+  \underline{\omega}=\underline{\nabla}\times \underline{u}=
+  \begin{pmatrix}
+    \pdev{u_3}{x_1}-\pdev{u_1}{x_3}\\
+    \pdev{u_3}{x_2}-\pdev{u_2}{x_3}\\
+    \pdev{u_2}{x_1}-\pdev{u_1}{x_2}
+  \end{pmatrix}\to
+  \underline{\omega}=0 \to \underline{u}=\underline{\nabla}\phi 
+\end{equation}
+Definisco \emph{tensore di velocità di deformazione}:
+\begin{equation}
+  \label{eq:tens_vel_defo}
+  S_{ij} = \frac{1}{2} \left(\pdev{u_i}{x_j}+\pdev{u_j}{x_i}\right)
+\end{equation}
+e \emph{tensore di rotazione}:
+\begin{equation}
+  \label{eq:tens_rot}
+  R_{ij}= \left(\pdev{u_i}{x_j}-\pdev{u_j}{x_i}\right)
+\end{equation}
+in particolare \cref{eq:tens_rot} è:
+\begin{equation*}
+  =\begin{bmatrix}
+    0 & -\omega_3 & \omega_2\\
+    \omega_3 & 0 & -\omega_1\\
+    -\omega_2 & \omega_1 & 0
+  \end{bmatrix} = -R_{ij}
+\end{equation*}
+E cioè il tensore di rotazione è antisimmetrico.
+Definendo il simbolo tensoriale $ \varepsilon_{ijk}  $, detto pseudo tensore di Levi-Civita come:
+\begin{equation}
+  \label{eq:e_ijk}
+  \varepsilon_{ijk} =
+  \begin{cases}
+    1 \quad i,j,k = 1,2,3;2,3,1;3,1,2\\
+    0 \quad i=j,j=k,i=k\\
+    -1 \quad i,j,k = 3,2,1;2,1,3;1,3,2
+  \end{cases}
+\end{equation}
+posso dunque riscrivere \cref{eq:tens_rot} come:
+\begin{equation}
+  R_{ij} = - \varepsilon_{ijk} \omega_k
+\end{equation}
+\twomini{
+  \begin{figure}[h]
+    \centering
+    \incfig{graf_deformazione_fluido}{}
+    % \caption{grafdeformazione_fluido}
+    \label{fig:graf_deformazione_fluido}
+  \end{figure}}{
+  \begin{gather*}
+    \underline{u}(P_2)=\underline{u}(P_1)+d\underline{u} =\\
+    =\underline{u}+\pdev{u}{x_j}d \underline{x}_j\\
+    =u_i +\pdev{u_i}{x_j}dx_j= \text{ (Forma Tensoriale)}\\
+    =\underline{u}+d \underline{x}\cdot \underline{\nabla}\underline{u} \text{ (Forma Vettoriale)}
+  \end{gather*}}
+Riscrivendo l'equazione nei termini di \cref{eq:tens_vel_defo} e \cref{eq:tens_rot}:
+\begin{equation}
+  \pdev{u_i}{x_j}=\underline{\nabla}\underline{u}=S_{ij}+ \frac{1}{2}R_{ij}
+\end{equation}
+TODO: insert figure p.11 notes
+
+\[
+\frac{D}{Dt} \delta x_1= \lim_{\Delta t\to0} \frac{(P_1^{'}-P_0^{'})-(P_1-P_0)}{\Delta t}=
+\]
+\[
+= \lim_{\Delta \to0} \frac{\pdev{u}{x_1}\delta x_1 \Delta}{\Delta t}= 
+\]
+\[
+\frac{1}{\delta x_1}\frac{D}{Dt}\delta x_1=\pdev{u_1}{x_1}\delta x_1\cdot \pdev{1}{\delta x_1}
+\]
+Quello che abbiamo appena scritto è l'elemento $ S_{11} $ del tensore $ \underline{\underline{S}} $.
+Cerchiamo i restanti elementi di $ \underline{\underline{S}} $:
+\[
+  S_{ij} = \frac{1}{2}(\pdev{u_i}{x_j}+\pdev{u_j}{x_i}) =
+  \begin{pmatrix}
+    \pdev{u}{x} & \frac{1}{2}(\pdev{u}{y}+\pdev{v}{x}) & \dots \\
+    \dots & \pdev{v}{y} & \dots \\
+    \dots & \dots & \pdev{\omega }{z}
+  \end{pmatrix}
+\]
+In generale sulla diagonale ($ i=j $) abbiamo i tre componenti che descrivono lo stiramento. Gli altri descrivono la deformazione.\\
+In più è evidente come $ S_{ij} $ sia una matrice simmetrica, per cui:
+\[
+S_{ij} = S_{ji}
+\]
+dunque i restanti elementi della matrice come sono fatti?
+\begin{figure}[H]
+    \centering
+    \incfig{vol_spostato}{}
+    \caption{Qui viene rappresentato quello che potrebbe essere un volumetto di fluido. I due lati mancanti sono simmetrici rispetto all'asse \textit{B-C}}
+    \label{fig:vol_spostato}
+\end{figure}
+Valutiamo lo spostamento.
+Il punto A è preso come punto di riferimento, dunque lo spostamento sarà:
+\[
+A'-A = (u_1\Delta t; u_2\Delta t)
+\]
+Per il punto B e C invece la cosa si complica:
+\begin{gather*}
+  B' -B = \left[\left(u_1-\pdev{u_1}{x_2}\delta x_2\right) \Delta t; \left(u_2+\pdev{u_2}{x_2}\delta x_2\right)\Delta t\right]\\
+  C' -C = \left[\left(u_1+\pdev{u_1}{x_1}\delta x_1\right)\Delta t;\left(u_2+\pdev{u_2}{x_1}\delta x_1\right)\Delta t\right]
+\end{gather*}
+Studio gli angoli:
+\begin{gather*}
+  \delta x_1\delta \alpha =(B' -B) - (A' -A) = \left(u_1+\pdev{u_1}{x_2}\delta x_2\right)\Delta -u_1\Delta t\\
+  \delta x_2\delta \alpha =\pdev{u_1}{x_2}\delta x_2\Delta t
+\end{gather*}
+Ripeto lo stesso ragionamento per $ \beta  $ e trovo:
+\begin{gather*}
+  \delta \alpha = \pdev{u_1}{x_2}\Delta t\\
+  \delta \beta =\pdev{u_2}{x_1}\Delta t
+\end{gather*}
+\[
+{\displaystyle \lim_{\Delta t\to0}} \frac{\delta \alpha +\delta \beta }{\Delta t} = \frac{D}{Dt}(\alpha +\beta ) = \pdev{u_1}{x_2}+\pdev{u_2}{x_1} = 2S_{12} = 2S_{21}
+\]
+Dunque se $ \delta \alpha =  \delta \beta = 0  $ allora $ S_{ij}=0 $. Questi moti sono detti \emph{rigidi}.\\
+Pendo in considerazione un volumetto di dimensioni $ \delta V =\delta x_1\delta x_2\delta x_3 $
+\begin{align*}
+  \frac{1}{\delta V} \frac{D}{Dt}\delta V &= \frac{1}{\delta V}(\frac{D\delta x_1}{Dt}\delta x_2\delta x_3+\dots )\\
+                                          &=\frac{1}{\delta x_1}\frac{D\delta x_1}{Dt} + \frac{D\delta x_2}{Dt} + \frac{1}{\delta x_3 }\frac{D \delta x_3}{Dt}\\
+                                          &= \pdev{u_1}{x_1} + \pdev{u_2}{x_2}+\pdev{u_3}{x_3}\\
+                                          &=\pdev{u}{x}+\pdev{v}{y}+ \pdev{w}{z}\\
+  &= \pdev{u_i}{x_i}=S_{ii}= \underline{\nabla}\cdot\underline{u} 
+\end{align*}
+Se le componenti sono tutte positive, allora il volumetto si sta espandendo, se sono tutte e tre negative si sta contraendo.\\
+Se $ \underline{\nabla}\cdot \underline{u} = 0\to $ è comunque possibile che si stiri in una direzione ma deve essere compensato da uno schiacciamento nelle altre dimensioni.
+%%% TeX-master: "master" 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

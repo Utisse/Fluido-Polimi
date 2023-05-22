@@ -1,0 +1,125 @@
+\lecture{3}{lun 27 feb 2023 14:30}{Tensione Superficiale, Capillarità, Cinematica}
+
+\subsection{Tensione superficiale}
+Il principio è lo stesso di una membrana solida costituita dalle forze delle molecole esterne.
+Viene misurata in $ \unit{N/m} $. Studio qual è il legame tra tensione superficiale e il salto di pressione $ \Delta P=P_1 -P_2 $ sopportabile.
+\begin{figure}[H]
+  \centering
+  \incfig{membrana}{}
+  \caption{}
+  \label{fig:membrana}
+\end{figure}
+Considerato $ P_b >P_a $, possiamo dire che $ \Delta\sigma =0$ perchè il problema è speculare, simmetrico rispetto a $ y $.
+\begin{equation*}
+  \label{eq:young_laplace_calc}
+  \int_{-\Delta \theta}^{\Delta \theta} (P_b-P_a) \cos(\Delta \theta  ) 
+\end{equation*}
+\begin{equation}
+  \label{eq:young_laplace}
+ P_b-P_a = \frac{\sigma}{R} 
+\end{equation}
+L'\cref{eq:young_laplace} è valida in 2D. Nel 3D $ R $ è definita come $ \frac{1}{R}=\frac{1}{R_y}+\frac{1}{R_x} $\\
+
+\subsection{Capillarità}
+
+\begin{figure}[H]
+  \centering
+  \incfig{angolo_tensione}{}
+  \caption{L'angolo $ \theta  $ che si forma a causa delle interazioni liquido-gas-solido è noto per sostanza. Inoltre $ \gamma_{12}=\gamma_{31}+\gamma_{23}\cos(\theta) $}
+  \label{fig:angolo_tensione}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \incfig{tubocapillare_acqua}{}
+  \caption{Tubo capillare pieno di acqua. $ H $ è la distanza verticale tra pelo libero e fondo del menisco. L'angolo che si forma è lo stesso (si veda \cref{fig:angolo_tensione}).}
+  \label{fig:TuboCapillare_acqua}
+\end{figure}
+\begin{equation*}
+  (P_a - P_1)\pi r^2-\rho g\pi r^2H=0
+\end{equation*}
+Il mio obiettivo è trovare il valore di $ H $, ma ancora non conosco $ P_1 $.\\
+Trovo $ P_1 $:
+\begin{eqnarray*}
+  \int_S(P_1-P_a)\underline{n}ds &+ \int_{2\pi r}\underline{\sigma}ds=0\\
+  \to P_1\pi r^2 \underline{e}z\,&\,\to 2\pi r\sigma \sin \theta  \underline{e}z\\
+  (P_1-P_a)\bcancel{\pi }r^{\bcancel{2}}\bcancel{\underline{e_z}} &+ 2\bcancel{\pi} \bcancel{r} \sigma \sin  \theta \bcancel{\underline{e_z}}\\
+  (P_1-P_a)r&+2\sigma \sin \theta 
+\end{eqnarray*}
+A questo punto posso trovare l'equazione per $ H $:
+\begin{equation}
+  H = \frac{2\sigma \sin \theta }{\rho gr}
+\end{equation}
+Chiaramente il discorso è diverso se si parla di acqua o di un altro liquido, come il mercurio. In particolare:
+\twomini{
+\begin{figure}[H]
+  \centering
+  \incfig{tubocapillare_acqua2}{}
+  \label{fig:TuboCapillare_acqua2}
+\end{figure}
+}{
+  \begin{equation*}
+    \sin \theta >0 \quad P_1<P_{atm} \quad H>0
+  \end{equation*}
+}
+Mentre per il mercurio
+\twomini{
+\begin{figure}
+    \centering
+    \incfig{tubocapillare_mercurio}{}
+    \label{fig:tubocapillare_mercurio}
+\end{figure}
+}{
+  \begin{equation*}
+    \sin \theta <0\quad P_1>P_{atm} \quad H<0
+  \end{equation*}
+}
+\section{Cinematica}
+\twominisw{
+  \begin{flushleft}
+    \begin{figure}
+      \incfig{descrizione_lagrangiana}{}
+      \caption{Descrizione Lagrangiana: analizzo un volumetto di fluido $ \underline{r} $ dipende da $ (\underline{r_0};t_0 )$ e da $ t $}
+      \label{fig:descrizione_lagrangiana}
+  \end{figure}
+\end{flushleft}
+}{
+  \begin{flushright}
+    \begin{figure}
+    \incfig{descrizione_euleriana}{}
+    \caption{Descrizione Euleriana: Studio il campo vettoriale. Le proprietà come la velocità dipendono dalla posizione e dal tempo. Per esempio la velocità $ \underline{u}(\underline{x},t )$}
+    \label{fig:descrizione_euleriana}
+    \end{figure}
+\end{flushright}
+}{.45}{.45}
+Questi due sistemi descrivono allo stesso moto e dunque:
+\begin{equation*}
+  \underline{u}((\underline{r_0}; t_0); t) = \underline{u}(\underline{x},t)
+\end{equation*}
+O più in generale:
+\begin{equation}
+  f(\underline{r},t) = f(\underline{x},t)
+\end{equation}
+Ora derivo una qualsiasi funzione $ f $.\\
+Nella descrizione Lagrangiana:
+\begin{equation}
+  \frac{d}{dt}f[\underline{r}(r_0,t),t] = \frac{\partial f}{\partial r_1} \frac{\partial r_1}{\partial t} + \frac{\partial f}{\partial r_2} (\partial \frac{r_2}{\partial t} + \frac{\partial f}{\partial r_3} (\partial \frac{r_3}{\partial t} + \frac{\partial f}{\partial t} 
+\end{equation}
+Nella descrizione Euleriana:
+\begin{equation}
+  \frac{d}{dt}f=\pdev{f}{x_1}\pdev{x_1}{t} + \pdev{f}{x_2}\pdev{x_2}{t} + \pdev{f}{x_3}\pdev{x_3}{t}+\pdev{f}{t}
+\end{equation}
+Queste due forme sono interscambiabili. Dato che $ \pdev{x_i}{t} = u_i $ allora:
+\begin{equation*}
+  = \pdev{f}{x_1} u_1+\pdev{f}{x_2}u_2+\pdev{f}{x_3}u_3+\pdev{f}{t}
+\end{equation*}
+Dato che $(\pdev{f}{x_1} \, \pdev{f}{x_2} \, \pdev{f}{x_3}) = \underline{\nabla}f$ posso riscrivere la derivata come:
+\begin{equation}
+  \label{eq:derivata_sostanziale}
+  \frac{Df}{Dt}=\underline{u}\cdot\underline{\nabla}f + \pdev{f}{t}
+\end{equation}
+che è detta \emph{derivata sostanziale}.
+Nel caso di flusso stazionario il termine $ \pdev{f}{t} $ si annulla ma il termine $ \underline{u}\cdot\underline{\nabla}f $ no!
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

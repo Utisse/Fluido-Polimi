@@ -1,0 +1,96 @@
+\lecture{12}{mar 21 mar 2023 14:30}{Numero di Prandlt, Soluzioni equazioni del moto}
+\subsection{Numero di Prandlt}
+Il numero di Prandlt è caratteristico del materiale e non del flusso. 
+\begin{equation}
+  \label{eq:num_prandlt}
+  Pr = \frac{{\mu c_p}}{\kappa }
+\end{equation}
+con $ C_p $ diffusione di quantità di moto e $ \kappa  $ diffusione termica (la stessa usata nella legge di Fourier).
+\vspace{1ex}
+\hline
+\vspace{1ex}
+Se aumento il numero di Reynolds $ Re $ aumentando la velocità aumento il numero di Mach. C'è il rischio di passare da incomprimibile a comprimibile
+
+\threemini{
+  \textbf{Incomprimibile} \\(Ma $ \ll 1 $)\\
+  Se $ U\ll c $ allora posso considerare $ c\approx \infty  $ (instantanea).
+}{
+  \textbf{Comprimibile} \textbf{subsonico} \\($ 0.3< $ Ma $ <1 $)\\
+  Devo considerare $ c $.
+}{
+  \textbf{Supersonico} \\(Ma $ >1 $)\\
+  Si forma un'onda d'urto
+}\\
+\hline
+\vspace{1ex}
+
+\section{Soluzioni equazioni del moto}
+Quello che vogliamo fare è riportare soluzioni analitiche valide in casi particolari.
+Ricordiamo che in generale il problema non è lineare dunque la composizione algebrica di due soluzioni non è detto che sia soluzione.\\
+Ipotesi:
+
+  \begin{gather*}
+    \underline{u} = u_i \hat{i}\qquad u2 = u3 =0\\
+    u_1 = u_1\left( x_1,x_2,t\right)  = u_1\left( y,z,t\right) \\
+    \pdev{u_i}{x_i}=0,\,\,\pdev{u_i}{x_j}=0,\,\,u_j\pdev{u_i}{x_j}=0 \quad \left( \underline{u}\cdot \underline{\nabla} \underline{u}\right) 
+  \end{gather*} 
+
+\[
+  \rho \pdev{u_1}{t}= - \pdev{P}{x}+\mu \left( \pdev{^2u_1}{u_1^2} + \pdev{^2u_1}{z^2}\right)
+\]
+Se il flusso è stazionario
+\[
+  \pdev{P}{x}=\mu\left( \pdev{^2u}{y^2}+\pdev{^2u}{z^2}\right)  
+\]
+Dato che $ \pdev{P}{x}$ dipende da $ x $ mentre nella parentesi ci sono termini che dipendono solo da $ y $ e $ z $ la soluzione è che $ \pdev{P}{x}=G=\operatorname{cost}  $. Dunque:
+\begin{gather*}
+  \rightarrow \pdev{^2u}{y^2}+\cancel{{\pdev{^2u}{z^2}}} = \frac{G}{\mu }\\
+  \pdev{^2u}{y^2}=\frac{G}{\mu }
+\end{gather*}
+Prendiamo in considerazione flusso tra due lastre, una ferma e una in movimento con una velocità orizzontale $ U $.
+Le due lastre sono distanti tra di loro $ h $.
+\[
+  \cancel{\pdev{u}{x}}+\pdev{\cancel{v}}{y}=0
+\] 
+$ v = 0 $ perchè la lastra si muove solo orizzontalmente e $ \pdev{u}{x}=0 $.
+
+\begin{equation*}
+  \Large
+  \begin{cases}
+    -\frac{1}{\rho }\pdev{P}{x}+\frac{\mu}{\rho }\pdev{^2u}{y^2}=0\\
+    -\frac{1}{\rho }\frac{dP}{dy}= 0
+  \end{cases}
+\end{equation*}
+La seconda equazione del sistema è data dal fatto che il gradiente di pressione in verticale è nullo. Dalla prima 
+\begin{gather*}
+  \rightarrow \frac{dP}{dx}=\mu \pdev{^2u}{y^2}
+\end{gather*}
+Dato che il primo membro dipende da $ x $ mentre il secondo da $ y $: $ \frac{dP}{dx}=G=\operatorname{cost}  $ e dunque:
+\begin{gather*}
+  \pdev{^2u}{y^2}=\frac{G}{\mu } \rightarrow \text{integro}\\
+  \frac{du}{dy}=\frac{G}{\mu }y+C \rightarrow \text{integro}\\
+  u = \frac{1}{2}\frac{G}{\mu }y^2+by+c
+\end{gather*}
+A questa equazione con due costanti non note aggiungo le condizioni al contorno 
+\begin{gather*}
+  u\left( 0\right) =0\\
+  u\left( h\right) =U
+\end{gather*}
+Dunque avrò un sistema:
+\begin{equation}
+  \begin{cases}
+    u\left( y\right) =\frac{G}{2\mu }y^2+by+c\\
+    u\left( 0\right) =0 \to c=0\\
+    u\left( h\right) =U \to b = \frac{1}{h}\left( U-\frac{1}{2}\frac{G}{\mu }h^2\right) 
+  \end{cases}
+\end{equation}
+Che da come unica equazione 
+\begin{equation}
+  u\left( y\right) =\frac{G}{2\mu }y^2+\frac{1}{h}\left( U-\frac{1}{2}\frac{G}{\mu  }h^2\right) y= \frac{U}{h}y-\frac{G}{2\mu }y\left( h-y\right) 
+\end{equation}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

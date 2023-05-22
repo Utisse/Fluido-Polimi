@@ -1,0 +1,112 @@
+\lecture{9}{mar 14 mar 2023 23:03}{Barotropicità, Bussinesq e Crocco}
+Massa:\\
+Se consideriamo $ V^* $ volume qualsiasi:
+\twomini{
+  \[
+    \frac{d}{dt}\displaystyle{\int_{V^*}^{}}\rho dV = \displaystyle{\int_{A^*}^{}}\left( \underline{b}-\underline{u}\right) \cdot \underline{n}dA
+  \]
+}{
+  \[
+    \pdev{\rho }{t}+\underline{\nabla}\cdot \left( \rho \cdot \underline{u}\right) =0
+  \]
+
+}
+Ma noi considereremo sempre $ V $ volume materiale:
+\twomini{
+  Dato il teorema di Reynolds \cref{eq:th_reynolds}:
+  \[
+    \displaystyle{\int_{V}^{}}\pdev{\rho }{t}dV + \displaystyle{\int_{A}^{}}\rho \underline{u}\cdot \underline{n}dA
+  \]
+}{
+  \[
+    \frac{D \rho }{Dt}+\rho \underline{\nabla}\cdot \underline{u}=0
+  \]
+  da notare che se il fluido è incomprimibile la situazione si semplifica poichè
+  \[
+    \underline{\nabla}\cdot \underline{u}=0
+  \]
+}
+Considero la quantità di moto data da:
+\begin{gather*}
+  \frac{d}{dt}\displaystyle{\int_{V^*}^{}}\rho \underline{u}dV+\displaystyle{\int_{A^*}^{}}\rho \underline{u}\left( \underline{u}-\underline{b}\right) \cdot \underline{n}dA = \overbrace{{\displaystyle{\int_{V^*}^{}}\rho \underline{g}dV + \displaystyle{\int_{A^*}^{}}fdA}}^{\text{Sorgenti}}\\
+  \displaystyle{\int_{V}^{}}\pdev{}{t}\left( \rho \underline{u}\right) dV + \displaystyle{\int_{A}^{}}\left( \rho \underline{u}\right) \cdot \underline{u}\cdot \underline{n} dA = \displaystyle{\int_{V}^{}}\rho \underline{g}dV + \displaystyle{\int_{A}^{}} \underline{\underline{\tau}}\cdot \underline{n}dA
+\end{gather*}
+Ricordiamo che
+\begin{gather*}
+  \tau_{ij}= -P \delta_{ij} +\sigma_{ij}\\
+  \underline{\underline{\tau}} = -P \underline{\underline{\mathrm{I}}} + \underline{\underline{\sigma}}
+\end{gather*}
+Il problema era indentificare $ \sigma_{ij} =2\mu \left( S_{ij}-\frac{1}{3}S_{kk}\delta_{ij} \right) +\mu_v S_{kk}\delta_{ij}  $
+
+\section{Approssimazione di Boussinesq}
+consideriamo un fluido:
+\begin{align*}
+  &\text{Barotropico} \quad \rho =\rho \left( P\right) \iff P = P\left( \rho \right) \\
+  &\text{Gas Perfetto} \quad e= C_vT \\
+  &\text{Incomprimibile} \quad \begin{cases}
+    \underline{\nabla}\cdot \underline{u}=0\\
+    \rho \frac{D \underline{u}}{Dt}=-\underline{\nabla}P+\rho \underline{g}+\mu \nabla^2 \underline{u}
+  \end{cases} 
+\end{align*}
+\subsection*{Eulero}
+\[
+  \begin{cases}
+    \pdev{\rho }{t} + \underline{\nabla}\cdot \left( \rho \underline{u}\right) =0\\
+    \rho \frac{D \underline{u}}{Dt}=-\nabla P + \rho \underline{g}
+  \end{cases}
+\]
+L'approssimazione di \emph{Boussinesq} è la seguente:
+\begin{equation}
+  \begin{cases}
+    \underline{\nabla}\cdot \underline{u}=0\\
+    \frac{D \underline{u}}{Dt} =-\frac{1}{\rho_0}\underline{\nabla}P + \frac{\mu}{\rho_0}\nabla^2 \underline{u}+\frac{\rho}{\rho_0}\underline{g}
+  \end{cases}
+\end{equation}
+Questo ci porta all' equazione di Crocco
+\subsection{Equazione di Crocco}
+\begin{gather*}
+  \pdev{u_i}{t}+u_j\pdev{u_i}{x_j}=-\frac{1}{\rho }\pdev{P}{x_j}-\pdev{\phi }{x_i}\qquad g = -\underline{\nabla}\phi
+\end{gather*}
+Prendiamo in considerazione il termine $  u_j\pdev{u_i}{x_j} $:
+\[
+u_j\underbrace{{\left( \pdev{u_i}{x_j}-\pdev{u_j}{x_i}\right) }}_{R_{ij}} + \underbrace{{u_j\pdev{u_i}{x_i}}}_{\pdev{}{x_i}\left( \frac{1}{2}u^2\right) }
+\]
+$ x_jR_{ij} $ equivale a dire
+\begin{gather*}
+  u_j\left( -\varepsilon_{ijk} \omega _k\\
+  -\varepsilon_{ijk} u_j\omega _k = \left( \underline{u}\times \underline{\omega}\right) _i
+\end{gather*}
+E dunque l' equazione di Crocco è
+\begin{equation}
+  \label{eq:crocco}
+  \pdev{\underline{u}}{t} + \left( \underline{\omega}\times \underline{u}\right)  + \underline{\nabla}\left( \frac{1}{2}u^2\right) =-\frac{1}{\rho }\underline{\nabla}P-\underline{\nabla}\phi 
+\end{equation}
+Per Eulero $ \rho = cost,\, \pdev{\underline{u}}{t}=0, $ 2D, $ z \approx cost  $, trascuro effetti dissipativi
+\begin{gather*}
+  \rightarrow \underline{u} \cdot \underline{\nabla}\underline{u} = \frac{1}{\rho }\underline{\nabla}P\\
+  \underline{u}\cdot \underline{\nabla}\underline{u} = -\frac{1}{R}u^2\underline{n}+\underline{u}\pdev{\underline{u}}{S}\left( \frac{1}{2}u^2\right) \\
+  \underline{\nabla}P = \pdev{P}{S}\underline{t}+\pdev{P}{S}\underline{n}
+\end{gather*}
+Per la direzione tangente
+\[
+\frac{d}{ds}\left( \frac{1}{2}u^2\right) =-\frac{1}{\rho }\pdev{P}{S} \pdev{sd}{sda}
+\]
+che dunque diventa
+\[
+  \frac{1}{2}\rho u^2=-P +\operatorname{cost} 
+\]
+\begin{equation}
+  P+\frac{1}{2}\rho u^2=\operatorname{cost} 
+\end{equation}
+mentre per la direzione normale
+\[
+-\frac{1}{R}u^2=-\frac{1}{\rho }\pdev{P}{r} \rightarrow \pdev{P}{t}=\frac{{\rho u^2}}{R}
+\]
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

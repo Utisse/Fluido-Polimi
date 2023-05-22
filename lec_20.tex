@@ -1,0 +1,174 @@
+\lecture{20}{lun 08 mag 2023 14:30}{Strato Limite}
+Quando troviamo la corrente intorno alla superficie di un corpo, in aerodinamica classica stiamo facendo una semplificazione: sulla superficie consideriamo esclusivamente la componente tangenziale alla superficie.
+In generale è una buona approssimazione ma non vedremo mai:
+\begin{itemize}
+\item Sforzo a parete $ \tau _w $ manca la resistenza
+\item Non abbiamo mai separazione.
+\end{itemize}
+Se il corpo è tozzo (non aerodinamico) allora le linee di corrente si separano dal corpo.
+Dietro il corpo tozzo si formano due grandi vortici dati dalla ricircolazione, abbiamo anche una contro corrente dietro il corpo.
+I grandi vortici in realtà si rompono in tanti più piccoli e generano turbolenza.
+Nel \textit{leading edge} c'è alta pressione mentre dietro non si riforma quella pressione a causa della separazione.
+Questa resistenza viene chiamata resistenza di \emph{scia} o di \emph{forma}.\\
+
+Entrando più nel dettaglio:
+% \begin{figure}[ht]
+%     \centering
+%     \incfig{velocità_parete}{}
+%     \caption{velocità_parete}
+%     \label{fig:velocità_parete}
+% \end{figure}
+Unendo tutti i punti in cui la velocità va a zero troviamo quello che chiamiamo \emph{strato limite} $ \delta  $ .
+Fino ad ora abbiamo considerato $ \delta \simeq 0 $. Risulta necessario per una rappresentazione corretta considerare lo strato limite. Un caso in cui è possibile considerare $ \delta =0 $ è nel caso di flusso potenziale, cioè quando il flusso non si separa mai e dunque lo strato limite segue la superficie.\\
+
+\section{Strato Limite}
+Ipotesi:
+\[
+  \begin{cases}
+    Re\gg 1\\
+    \frac{\delta}{L}\ll 1
+  \end{cases}
+\]
+\begin{figure}[H]
+    \centering
+    \incfig{strato_lim}{}
+    \caption{}
+    \label{fig:strato_lim}
+\end{figure}
+Flusso stazionario $ \pdev{}{t}=0  $, 2D, $ \rho =\operatorname{cost}  $ , $ \mu =\operatorname{cost}  $
+\begin{equation*}
+  \large
+  \begin{cases}
+  \underline{\nabla}\cdot \underline{u}=0\\
+  \cancel{\pdev{u}{t}}+ u \pdev{u}{x} + v \pdev{u}{y}=-\frac{1}{\rho }\pdev{P}{x}+\nu \left( \pdev{^2u}{x^2}+\pdev{^2u}{y^2}\right) \\
+  \cancel{\pdev{y}{t}}+ u \pdev{y}{x} + v \pdev{y}{y}=-\frac{1}{\rho }\pdev{P}{x}+\ny \left( \pdev{^2y}{x^2}+\pdev{^2y}{y^2}\right) \\
+  \end{cases}
+\end{equation*}
+Dobbiamo stimare delle derivate:
+
+\[
+  u \pdev{u}{x}\approx  \frac{U^2_\infty}{L}\qquad v\pdev{u}{y}\approx \frac{1}{\delta }
+\]
+Dato che 
+\[
+  \pdev{u}{x}+\pdev{v}{y}= 0 \rightarrow \pdev{u}{x}\approx \pdev{v}{y}
+\]
+Allora le due derivate devono essere comparabili dunque
+
+\[
+  \pdev{v}{y} \simeq \frac{U_\infty}{L} \rightarrow  v \approx U_\infty \frac{\delta}{L}
+\]
+E dunque
+\[
+  \rightarrow v \pdev{u}{y}\approx U_\infty \frac{\delta}{L} \frac{U_\infty}{\delta } \approx \frac{U_\infty^2}{L}
+\]
+Termini diffusivi:
+\[
+  \nu \pdev{^2u}{x^2}\approx \nu \frac{U_\infty}{L}\quad; \quad \nu \pdev{^2u}{y^2}\simeq \nu \frac{U_\infty}{\delta ^2} \gg  \nu \frac{U_\infty}{L^2}
+\]
+Nello strato limite c'è un equilibrio tra effetti convettivi del flusso e diffusivi dati dall' interazione con la parete. Hp: L'ordine dei termini convettivi dovrà essere pari a quello dei diffusivi. E dunque
+\[
+  \frac{U_\infty^2}{L}\approx \nu \frac{U_\infty}{\delta ^2} 
+\]
+Allora: 
+\[
+  \rightarrow \delta ^2 \approx  \frac{\nu L}{U_\infty  } \quad \delta \approx \sqrt{\frac{{\nu L}}{U_\infty }}
+\]
+trovo
+\[
+  \frac{\delta}{L} \approx \sqrt{\frac{{\nu L}}{U_\infty L^2}} = \sqrt{\frac{{\nu}}{U_\infty L}} = \frac{1}{\sqrt{Re}}
+\]
+\hline
+\vspace{1ex}
+\[
+\]
+
+\begin{gather*}
+  x^* = \frac{x}{L}| y^* = \frac{y}{\delta }=\frac{y}{L}\sqrt{Re}| u^* = \frac{u}{U_\infty }|\\
+  v^* = \frac{v}{U_\infty }\frac{L}{\delta }=\frac{v}{U_\infty }\sqrt{Re}| P^*=\frac{{P-P_\infty }}{\rho U_\infty ^2}
+\end{gather*}
+Da questo momento in avanti $ U_\infty =U $
+\[
+  \pdev{u^*}{x^*}\frac{U}{L}+ \pdev{v^*}{y^*}\frac{U}{\cancel{\sqrt{Re}}}\frac{\cancel{\sqrt{Re}}}{L}\rightarrow 
+\]
+\[
+  \rightarrow  \pdev{u^*}{x^*}+ \pdev{v^*}{v^*}=0
+\]
+
+\[
+  u^* \pdev{u^*}{x^*}\frac{U^2}{L}+v^*\pdev{u^*}{y^*}\frac{U^2}{\sqrt{Re}}\frac{\sqrt{Re}}{L} = -\frac{1}{\rho} \pdev{P^*}{x^*}{\frac{{\rho U^2}}{L} + \nu  \pdev{^2u^*}{x^{*2}} \frac{U}{L^2}Re
+\]
+\[
+  u^* \pdev{u^*}{x^*}+v^*\pdev{u^*}{y^*}= -\pdev{P^*}{x^*} + \underbrace{\frac{\nu}{UL}}_{\frac{1}{Re}} \pdev{^2u^*}{x^{*2}} + \cancel{\frac{\nu}{UL}}\cancel{Re} \pdev{^2u^*}{y^{*2}}
+\]
+\begin{equation}
+  u^* \pdev{u^*}{x^*}+v^*\pdev{u^*}{y}= - \pdev{P^*}{x^*}+\underbrace{{\left( \frac{1}{Re}\pdev{^2u^*}{x^{*2}}\right)}}_{Re \gg 1 \rightarrow  \approx 0}  + \pdev{^2u^*}{y^{*2}}
+\end{equation}
+Ragionamento analogo per la seconda equazione di navier stokes (rispetto a $ y $ )
+\[
+  u^*\pdev{v^*}{x^*}\frac{U^2}{\sqrt{Re}L} + v^* \pdev{v^*}{y^*}\frac{U^2}{\sqrt{Re}L} = -\pdev{P^*}{y^*}\frac{U^2}{L}\sqrt{Re} + \nu \pdev{^2v^*}{y^{*2}}\frac{U}{\sqrt{Re}L^2}+ \nu \pdev{^2v^*}{y^{*2}} \frac{{U \sqrt{Re}}}{L^2}
+\]
+Moltiplico tutto per $ \frac{L}{U^2 \sqrt{Re}} $ 
+\[
+  \frac{1}{Re} \left(  u^* \pdev{y^*}{x^*}+v^*\pdev{v^*}{y^*}\right)  = - \pdev{P^*}{y^*}+ \underbrace{{\nu \frac{U}{\sqrt{Re}L^2} \frac{L}{U^2 \sqrt{Re}}}}_{\frac{1}{Re^2}}\pdev{^2v^*}{x^{*2}} + \underbrace{{\nu  \frac{U \sqrt{Re}}{L^2} \frac{L}{U^2 \sqrt{Re}}}}_{\frac{1}{Re}} \pdev{^2v^*}{y^{*2}}
+\]
+\begin{equation}
+  \frac{1}{Re} \left( \text{termini convettivi}\right) = - \pdev{P^*}{y^*}+\frac{1}{Re}\left( \text{termini dissipativi}\right) 
+\end{equation}
+
+
+\begin{equation}
+  \large
+  \begin{cases}
+    \pdev{u^+}{x^*}+\pdev{v^*}{y^*}=0\\
+    u^*\pdev{u^*}{x^*}+v^*\pdev{u^*}{y^*}=-\pdev{P^*}{x^*}+\pdev{^2u^*}{y^{*2}}\\
+    \pdev{P^*}{y^*}=0
+  \end{cases}
+\end{equation}
+Ritornando ai valori dimensionali
+\begin{equation}
+  \large
+  \begin{cases}
+    \pdev{u}{x}+\pdev{v}{y}=0\\
+    u\pdev{u}{x}+v\pdev{u}{y}=-\frac{1}{\rho }\pdev{P}{x}+\pdev{^2u}{y^2}\\
+    \pdev{P}{y}=0 \rightarrow P = P\left( x\right) 
+  \end{cases}
+\end{equation}
+Vale bernulli 
+\begin{gather*}
+  P+ \frac{1}{2}\rho U_e^2=\operatorname{cost} =P_\infty +\frac{1}{2}\rho U_\infty ^2 \qquad U_e = U_e \left( x\right) \\
+  \frac{dP}{dx} = \frac{d}{dx}\left( -\frac{1}{2}\rho U_e^2\right)  = -\rho U_e \frac{dU_e}{dx}
+\end{gather*}
+
+\subsection{Equazioni di Prandlt}
+
+Ora posso ottenere il sistema delle equazioni di Prandlt per strato limite bidimensionale 2D
+
+\begin{equation}
+	\label{eq:prandlt}
+  \begin{cases}
+    \pdev{u}{x}+\pdev{v}{y}=0\\
+    u \pdev{u}{x}+v\pdev{u}{y}= U_e \frac{dU_e}{dx} + \nu \pdev{^2u}{y^2}
+  \end{cases}
+\end{equation}
+Abbiamo due equazioni in due incognite: $ u $ e $ v $.\\
+Condizioni al contorno:
+
+\begin{gather*} 
+  u\left( x,0\right) =v\left( x,0\right) =0 \\
+  \underline{u}\left( x,y\rightarrow \infty \right) \rightarrow U_e\\
+  \underline{u}\left( 0,y\right)  = \underline{u}_{\text{in}}\left( y\right) 
+\end{gather*}
+Per la $ x $ e per la $ y $ sto usando due modelli fisici diversi. La seconda equazione mi garantisce che concordino e cioè che per $ y\to\infty, \, \underline{u}\to U_e$.
+La terza condizione mi impone di avere una velocità input nota, perchè non si è ancora sviluppata. In generale fuori dallo strato limite vale laplace $ \nabla^2\phi  $.\\
+\hline
+\vspace{2ex}
+Nel modello potenziale l'attrito non si vede.
+Precipita di scatto a parete mantendo il proprio valore.
+Nella realtà questa soluzione vale solo fuori dalla parete.
+Dunque la corrente esterna è quella a parete perchè ora c'è lo strato limite cioè un $ \delta  $ che prima non consideravamo.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

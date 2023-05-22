@@ -1,0 +1,89 @@
+\lecture{7}{gio 09 mar 2023 14:30}{Equazioni di Navier Stokes e di Eulero}
+Definisco la \emph{viscosità volumetrica} come:
+\[
+\mu_v = \lambda +\frac{2}{3}\mu 
+\]
+dunque il tensore $ \tau _{ii} $ diventa:
+
+\begin{align*}
+  \tau _{ii} = -3P_S+\mu_v \underline{\nabla}\cdot \underline{u}\\
+  P_S = - \frac{1}{3}\tau _{ii} + \mu_v \underline{\nabla}\cdot \underline{u}\\
+  P_S = \overline{P} + \mu_v \underline{\nabla}\cdot \underline{u} 
+\end{align*}
+Dunque quali di queste due pressioni ($ P_S $, pressione termodinamica e $ \overline{P} $, pressione meccanica) è quella `vera'?
+$ P_S = \overline{P} $ solo se $ \mu_v \underline{\nabla}\cdot \underline{u} = 0 $\\
+Dunque sono uguali solo per $ \mu_v =0 $ e cioè solo se il fluido è incomprimibile.
+Questa viene chiamata \emph{assunzione} \emph{di} \emph{Stokes}.\\
+Da ora in poi la notazione sarà la seguente $ P = P_S = \overline{P} $.\\
+Scriviamo ora la relazione costitutiva per i fluidi newtoniani:
+
+\begin{equation}
+  \tau _{ii} = -P_S\delta_{ij} +2\mu \left( S_{ij} -\frac{1}{3}S_{kk} \delta_{ij} \right) + \mu _v S_{kk} \delta _{ij}
+\end{equation}
+Se il fluido è incomprimibile (ricordiamo $ \mu _v = 0 $) allora $ \tau _{ij} $ dipende linearmente. Inoltre $ \underline{\nabla}\cdot \underline{u} =S_{kk} = 0 $. Dunque:
+\[
+\tau _{ij} = -P_S \delta _{ij} +2\mu S_{ij}
+\]
+Ora sostituisco nella legge di bilancio:
+\begin{align*}
+  \underline{\nabla}\cdot \underline{\underline{\tau }} &= \pdev{}{x_j}\left[ -P_S\delta_{ij} +2\mu \left( S_{ij} -\frac{1}{3} S_{kk}\delta_{ij} \right) +\mu_v S_{kk}\delta_{ij} \right] \\
+                                                        &=-\underline{\nabla}P_S + \pdev{}{x_j} \left( 2\mu S_{ij}\right) +\pdev{}{x_j}\left( \mu _v-\frac{2}{3}\mu \right) S_{kk}\delta_{ij} 
+\end{align*}
+Prendendo in considerazione il secono termine:
+\[
+2\mu \pdev{}{x_j}\left[ \frac{1}{2}\left( \pdev{u_i}{x_j}+\pdev{u_j}{x_i}\right) \right]  = \mu \pdev{^2u_i}{x_{j}^2} + \mu \pdev{}{x_i}\pdev{u_j}{x_j}
+\]
+Riprendiamo l'equazione completa
+\[
+\underline{\nabla}\cdot \underline{\underline{\tau }} = -\underline{\nabla}\cdot P_S + \mu \nabla ^2 \underline{u} + \mu \underline{\nabla}\left( \underline{\nabla}\cdot \underline{u}\right)  + \left( \mu _v -\frac{2}{3}\mu \right) \underline{\nabla}\left( \underline{\nabla}\cdot \underline{u}\right) 
+\]
+\subsection{Navier Stokes Generali}
+Abbiamo così raggiunto le equazioni di Navier Stokes Generali
+\begin{equation}
+  \label{eq:navi_stok_gen}
+  \pdev{}{t}\left( \rho \underline{u}\right)  + \underline{\nabla}\cdot \left( \underline{u} \otimes \rho \underline{u}\right)  = -\underline{\nabla}P_S +\rho \underline{g}+\mu \nabla^2 \underline{u}+ \left( \mu _v+\frac{1}{3}\mu \right) \underline{\nabla}\left( \underline{\nabla}\cdot \underline{u}\right) 
+\end{equation}
+Posso sciogliere il primo termine $ \pdev{}{t}\left( \rho u_i\right)  $ in
+\[
+  \rho \pdev{u_i}{t}+ u_i \pdev{\rho }{t}  
+\]
+e il secondo $ \pdev{}{t}\left( u_i\rho u_j \right) $ in
+\[
+u_i\pdev{}{x_j}\left( \rho u_j\right) +\rho u_j\pdev{u_i}{x_j}
+\]
+Il secondo termine della prima equazione e il primo della seconda sommati indicano l' equazione della conservazione della massa moltiplicata per $ u_i $.
+Dunque
+\[
+  u_i \left( \pdev{\rho }{t}+\pdev{}{x_j}\left( \rho u_j\right) \right) \rightarrow u_i\left( \pdev{\rho }{t}+\underline{\nabla}\cdot \left( \rho \underline{u}\right) \right) =0
+\]
+Arrivo così alla equazione di Navier-Stokes completa vettoriale
+\begin{equation}
+  \label{eq:NV_comp_vett}
+  \rho \frac{ D \underline{u}}{t} = - \underline{\nabla}P_S +\rho \underline{g}+\mu \nabla ^2 \underline{u} + \left( \mu _v +\frac{1}{3} \mu \right) \underline{\nabla}\left( \underline{\nabla}\cdot \underline{u}\right) 
+\end{equation}
+Per il flusso incomprimibile
+\[
+\rho \frac{D \underline{u}}{Dt} = - \underline{\nabla} P + \rho \underline{g}+\mu \nabla^2 \underline{u}
+\]
+Moltiplico entrambi i membri per $ \frac{1}{\rho } $ e sostituisco $ \frac{\mu}{\rho } = \nu  $
+\begin{equation}
+  \label{eq:NV_flux_incompr}
+  \frac{D\underline{u}}{Dt} = -\frac{1}{\rho }\underline{\nabla} P + \underline{g} + \nu  \nabla ^2 \underline{u}
+\end{equation}
+
+
+\subsubsection{Eulero}
+Se non considero viscosità, attrito e considero il mio fluido un fluido ideale trovo un'equazione più semplice, chiamata equazione di \emph{eulero}
+\begin{equation}
+  \pdev{}{t}\left( \rho \underline{u}\right)  + \underline{\nabla}\cdot \left( \underline{u} \otimes \rho \underline{u}\right) = - \underline{\nabla} P_S +\rho \underline{g}
+\end{equation}
+Sostanzialmente l' equazione di eulero vale per numeri di Reynolds molto alti, dove l'attrito è trascurabile. Riprendendo \cref{eq:NV_flux_incompr} e considerando $ \nu =0 $ 
+\begin{equation}
+  \frac{D \underline{u}}{Dt}=\frac{1}{\rho }\underline{\nabla}P +\underline{g}
+\end{equation}
+Questa equazione è apparentemente più docile ma va considerato che la derivata sostanziale implica una non linearità dell'equazione.
+A causa di ciò non è detto che la combinazione lineare di due soluzioni sia a sua volta soluzione.
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

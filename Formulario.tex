@@ -1,0 +1,72 @@
+\newpage
+%\lecture{Appendice}{x x x x x x}{Formulario}
+\section{Formulario}
+\subsection{Derivata sostanziale}
+
+\[
+  \frac{D F}{Dt}=\pdev{F}{t}+\underline{u}\cdot \nabla F
+\]
+\subsection{Tensori}
+\subsubsection{Tensore di rotazione}
+\[
+  R_{ij} = \pdev{u_i}{x_j}-\pdev{u_j}{x_i}
+\]
+\subsubsection{Tensore di velocità di deformazione}
+\[
+  S_{ij}=\frac{1}{2}\left( \pdev{u_i}{x_j}+\pdev{u_j}{x_i}\right) 
+\]
+
+
+\subsection{Equazione di Continuità}
+Esprime la conservazione della massa.
+\begin{gather*}
+  \pdev{\rho }{t}+\nabla\cdot \left( \rho \underline{u}\right) =0\\
+  \pdev{\rho }{t}+\pdev{}{x_j}\left( \rho \underline{u}\right) =0
+\end{gather*}
+Oppure riscrivendo il termine della divergenza trovo:
+\[
+  \frac{1}{\rho }\frac{D \rho }{Dt}+ \nabla\cdot \underline{u}=0
+\]
+\subsubsection{Per fluido incomprimibile}
+\[
+  \nabla\cdot \underline{u}
+\]
+Valida indipendentemente dalla stazionarietà.
+\subsection{Circolazione}
+\[
+  \Gamma =\displaystyle{\oint_{C}^{}}\underline{u}\cdot ds
+\]
+Con $ ds $ elemento infinitesimo del contour. Usando il teorema di Stokes trovo:
+\[
+  \Gamma =\displaystyle{\int_{A}^{}}\omega\cdot dA
+\]
+\subsection{Equazione del moto di Cauchy}
+\[
+  \rho \frac{D u_i}{Dt}=\rho g_i+\pdev{\tau_{ij} }{x_j}
+\]
+\subsection{Conservazione della quantità di moto}
+
+\[
+  F = \frac{dM}{dt}+\dot{M}^{\text{out}} 
+\]
+\subsection{Tensore dello sforzo}
+O equazione costitutiva per i fluidi (Newtoniani).
+\[
+  \tau_{ij} = \left( -p +\frac{2}{3}\mu \underline{\nabla}\cdot \underline{u}\right) \delta_{ij} +2\mu S_{ij}
+\]
+\[
+  \tau_{ij} = \left( -p +\frac{2}{3}\mu \underline{\nabla}\cdot \underline{u}\right) \delta_{ij} +2\mu e_{ij}
+\]
+\subsection{Navier-Stokes}
+Sostituendo l'equazione costitutiva nell'equazione di Cauchy trovo:
+\[
+  \rho \frac{D u_i}{Dt}=-\pdev{P}{x_i}+\rho g_i+\pdev{}{x_j}\left[ \frac{2}{3}\mu \left( \underline{\nabla}\cdot \underline{u}\right) \delta_{ij} \right]
+\]
+dove abbiamo notato che 
+\[
+  \left( \pdev{p}{x_j}\right) \delta_{ij} =\pdev{p}{x_i}
+\]
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

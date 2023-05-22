@@ -1,0 +1,147 @@
+\lecture{21}{mar 09 mag 2023 14:30}{Strato Limite su lamina piana semi-infinita}
+
+\[
+  \delta =\delta \text{ tale che } u\left( x,\delta_{99}\right)  = 0.99 U_e
+\]
+Spessore di spostamento.\\
+Nella situazione ideale la velocità rimane costante fino al raggiungimento della superficie.
+Nel caso reale questo non succede.
+Possiamo interpretare questa semplificazione come un difetto di portata.
+\begin{figure}[ht]
+    \centering
+    \incfig{corrente_spostata}{}
+    % \caption{corrente_spostata}
+    \label{fig:corrente_spostata}
+\end{figure}
+\[
+  \displaystyle{\int_{0}^{\infty }}\left[ U_e - u \left( y\right) \right] dy=\displaystyle{\int_{0}^{\delta ^*}}U_edy = U_e \delta ^*
+\]
+
+\[
+  \delta ^* = \displaystyle{\int_{0}^{\infty }}\left( 1- \frac{u}{U_e}\right) dy
+\]
+Spessore di spostamento: $ \delta ^*<\delta _\alpha  $ \\
+Prima che il flusso interagisca con la parete il profilo di velocità sarà indisturbato, $ U_e $.
+Quando poi il flusso incontra la superficie lo strato limite crescerà (se superficie semplicemente piana).
+Se considero una linea di corrente qualsiasi (per forza deviata verso l'alto).
+Prendo in considerazione un punto $ x $, in quel punto la distanza verticale tra la linea di corrente e la superficie sarà $ h $.
+Sul punto precedente, quando la linea non era disturbata, la distanza verticale sarà $ h-\delta ^+ $
+Lo sforzo sulla superficie $ \tau =\tau _w $.
+\[
+  \underbrace{{\displaystyle{\int_{0}^{h}}\rho u^2dy}}_{\text{Out}} - \underbrace{{\displaystyle{\int_{0}^{h-\delta ^*}}\rho U_e^2dy}}_{\text{In}}{ = - \displaystyle{\int_{0}^{x}}\tau _wdx = -\rho U_e^2\theta 
+\]
+\[
+  \rho U^2_e \theta - \left[ \displaystyle{\int_{0}^{h}}\rho \left( u^2-U_e^2\right) dy - \rho U_e^2\left( -\delta ^*\right) \right] 
+\]
+\[
+  \theta = \left[ \displaystyle{\int_{0}^{h}}\left( \frac{u^2}{U_e^2}-1\right) dy + \displaystyle{\int_{0}^{h}}\left( 1-\frac{u}{U_e}\right) dy \right]  = -\displaystyle{\int_{0}^{h}}\left( \frac{u^2}{U_e^2}-\frac{u}{U_e}\right) dy =
+\]
+\begin{equation}
+   =\displaystyle{\int_{0}^{h}}\frac{u}{U_e}\left( 1-\frac{u}{U_e}\right) dy
+\end{equation}
+\emph{(il rapporto tra $ \delta^*  $ e $ \theta  $ si chiama fattore di forma.)}\\
+\hline
+\vspace{1ex}
+\subsection{Strato limite su lamina piana semi-infinita}
+Studiamo lo strato limite (anche ripetibile in laboratorio con \textit{trucchi}). Lo strato limite si chiama di \emph{Blasius}. La corrente che arriva verrà frenata. Più sono vicino alla parete più la corrente verrà rallentata. Le linee di corrente vengono lentamente deflesse e lo strato limite aumenta il suo spessore. Avvicinandoci alla parete il difetto di portata aumenta. Lo spessore dello strato aumenta progressivamente. Il flusso è uniforme, pressione e velocità uniforme, poi viene disturbato dalla lamina. Dato che la lamina è semi-infinita dobbiamo considerare una scala locale, dunque il Reynolds sarà locale e cambierà in base alla distanza $ x $ chiamato $ Re_x $
+\[
+  Re_x = \frac{Ux}{\nu }
+\] 
+
+\begin{equation*}
+  \large
+  \begin{cases}
+    \pdev{u}{x}+\pdev{v}{y}=0\\
+    u\pdev{u}{x}+v\pdev{u}{y}=U_e \cancel{\frac{d U_e}{d x}} + \nu \pdev{^2u}{y^2}
+  \end{cases}
+\end{equation*}
+Rimane solo la componente dissipativa. Mancano le condizioni al contorno
+\begin{equation*}
+  \begin{cases}
+    u\left( x,0\right)  = v\left( x,0\right) =0\\
+    u\left( x,y\right)  \rightarrow}_{y\to\infty }U_e\\
+    u\left( 0,y\right)  = U_e
+  \end{cases}
+\end{equation*}
+Da ora in poi $ U_e =U $, corrente asintotica. 
+Nell'origine la prima e la terza condizione si contraddicono.
+Dunque ho bisogno di una soluzione trovata in un altro modo nell'origine.
+Possiamo dire che $ \delta \left( 0\right) =0 $ oppure risolvere Navier-Stokes nell' origine.\\
+Se usiamo unità dimensionali $ h $ varia con $ x $. Se invece scalo tutto con $ \frac{y}{\delta } $ tutto collassa in una curva detta \emph{autosimile}.
+\[
+  \underline{\nabla}\cdot \underline{u} = 0 \rightarrow U = \pdev{\psi}{y};\,\,v = -\pdev{\psi}{x}
+\]
+Non posso definire il potenziale perchè $ \nabla\times \underline{u} \neq 0 \rightarrow \cancel{\exists} \phi  $\\
+Definisco $ \eta $: 
+\[
+  \rightarrow \eta = \frac{y}{\delta \left( x\right)} \quad \frac{u\left(  x,y\right) }{U}=h\left(\eta\right) 
+\]
+Definisco $ \psi $ 
+\[
+  \psi = U\delta \left( x\right) f\left( \eta\right) \quad \text{con } f\left( \eta\right)  = \displaystyle{\int_{0}^{\eta}}f\left( \eta^{\prime}\right) d\eta^{\prime}
+\]
+infatti 
+\[
+  \pdev{\psi}{y} = U\delta \frac{d f}{d \eta}\pdev{\eta}{y}=U \cancel{\delta} h \cancel{\frac{1}{\delta }} = U h =u
+\]
+
+\[
+  v = -\pdev{\psi}{x}= -U \frac{d \delta }{d x}f\left( \eta\right) -U \delta  \frac{d f}{d \eta}\left( -\frac{y}{\delta }\frac{d \delta }{d x}\right)  = -U \frac{d \delta }{d x}\left[ f-\eta\frac{d f}{d \eta}
+\]
+\begin{gather*}
+    U \frac{d f}{d \eta}\pdev{}{x}\left( U\frac{d f}{d \eta}\right) +U \frac{d \delta }{d dx}\left[ -f +\eta\frac{d f}{d \eta}\right] \frac{d }{d \eta}\left( U\frac{d f}{d \eta}\pdev{\eta}{y }\\
+      \nu \frac{d }{d \eta}\left[ \frac{d }{d \eta}\left( \frac{d f}{d \eta}\right) \pdev{\eta}{y}\right] \pdev{\eta}{y}
+\end{gather*}
+Passo alla seconda equazione di Prandlt
+\begin{gather*}
+  U^2\frac{d f}{d \eta} \frac{d }{d \eta }\left( \frac{d f}{d \eta }\right) \frac{d \eta }{d x}+ U^2\pdev{\delta }{x}\left[ -f+\eta \frac{d f}{d \eta }\right] \frac{d^2f }{d\eta ^2 } \frac{1}{\delta }=\\
+  =\nu U\frac{d }{d \eta }\left( \frac{d ^2f}{d \eta ^2}\cdot \frac{1}{\delta }\right) \cdot \frac{1}{\delta }
+\end{gather*}
+Definisco $ \frac{d f}{d \eta }=f^\prime  $ e continuo:
+\begin{gather*}
+  U^2f^{\prime} f^{\prime\prime} \left(  - \frac{y}{\delta }\right) \frac{d \delta }{d x}+U^2\frac{d \delta }{d x}\left[ -f \eta f^'\right] f^{\prime\prime}\frac{1}{\delta }=\nu Uf^{\prime\prime\prime}\frac{1}{\delta ^2}\\
+  \cancel{{-U^2 f^{\prime}f^{\prime\prime}\frac{\eta}{\delta }\delta^{\prime}}} - U^2ff^{\prime\prime}\delta^{\prime} \frac{1}{\delta }+{U^2\eta f^{\prime}f^{\prime\prime}\frac{1}{\delta }\delta^{\prime} = \nu Uf^{\prime\prime\prime} \frac{1}{\delta ^2}
+\end{gather*}
+
+\[
+  -ff^{\prime\prime} \delta \delta^{\prime}} = \frac{\nu}{U}f^{\prime\prime\prime}
+\]
+Se impongo $ C\delta \delta^{\prime} = \frac{\nu}{U} \rightarrow \frac{1}{2}C\delta ^2=\frac{\nu}{U}x+D$. Chiamo in causa le condizioni al contorno.
+\[
+  \delta \left( 0\right) =0 \rightarrow D = 0
+\]
+trovo
+\[
+  \delta ^*=\frac{{2\nu x}}{CU}
+\]
+Per $ C = 2 $ si ottiene
+\[
+  \delta = \sqrt{\frac{{\nu x}}{U}} \qquad \frac{\delta}{x} = \frac{1}{\sqrt{Re_x}}
+\]
+Sostituisco e trovo
+\[
+  f^{\prime\prime\prime} = -\frac{U}{\nu }\delta \delta^{\prime} ff^{\prime\prime} =- \frac{1}{2}f f^{\prime}
+\]
+E trovo l'eqauazione di Blasius, un'equazione alle derivate ordinarie, la soluzione è il probfilo di velocità autosimile.
+\begin{equation}
+  \label{eq:blasius}
+  f^{\prime\prime\prime} + \frac{1}{2}f f^{\prime\prime} = 0
+\end{equation}
+Ricordiamo le condizioni al contorno:
+\begin{gather*}
+  y = 0 \rightarrow \eta =0\\
+  \eta  = 0 \rightarrow f = f^{\prime}=0\\
+  \eta \to \infty \rightarrow f^{\prime}\to\infty 
+\end{gather*}
+[[Tutto questo è mostrato a pagina 357 del Kundu]]
+
+\begin{gather*}
+  \delta _{99} \rightarrow \eta \approx   4.93\\
+  \delta ^* \approx  1.72\, \delta \\
+  \theta \approx 0.664\,\delta\\
+  \tau _w =\mu \left\frac{d u}{d y}\right|_0 = \mu  U \frac{d }{d \eta }f^{\prime} \pdev{\eta }{y}=\eta U f^{\prime\prime} \frac{1}{\delta}  \approx 0.332 \rho U^2 \frac{1}{\sqrt{Re_x}}
+\end{gather*}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

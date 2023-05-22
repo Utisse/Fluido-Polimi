@@ -1,0 +1,112 @@
+\lecture{8}{lun 13 mar 2023 14:30}{Conservazione dell'energia}
+L'equazione per la conservazione dell'energia di un fluido è la seguente:
+\begin{equation}
+  \label{eq:conservazione_energia}
+  \frac{d}{dt} \displaystyle{\int_{V\left( t\right) }^{}}\rho \left( e+\frac{1}{2}u^2\right) dv = \underbrace{{\displaystyle{\int_{V\left( t\right) }^{}}\rho \underline{g}\cdot \underline{u}dv}}_1 + \underbrace{{\displaystyle{\int_{A\left( t\right) }^{}}\underline{f}\cdot \underline{u}dA}}_2 -\underbrace{{\displaystyle{\int_{A\left( t\right) }^{}}\underline{q}\cdot \underline{n}dA}}_3
+\end{equation}
+con:
+\begin{itemize}
+\item $ V\left( t\right)  \to $ Volume materiale
+\item $ e \to$ Energia specifica del fluido
+\item $ \frac{1}{2}u^2 \to$ Energia cinetica specifica del fluido
+\item Il termine 1 indica il lavoro che fa la dorza di gravità sul fluido
+\item Il termine 2 indica il lavoro delle forze di superficie
+\item Il termine 3 il lavoro delle forze di calore, $ \underline{q}  $ è il vettore flusso di calore (definito dalla legge di Fourier $ \underline{q} = -k\underline{\nabla}T $)
+\end{itemize}
+Utilizzo il teorema di Reynolds (\cref{eq:th_reynolds})
+\begin{equation*}
+ \displaystyle{\int_{V\left( t\right) }^{}}\pdev{}{t}\left( \rho e+\frac{1}{2}\rho u^2\right) dv + \overbrace{\displaystyle{\int_{A\left( t\right) }^{}}\left( \rho e+\frac{1}{2}\rho u^2\right) \underline{u}\cdot \underline{n}dA}^1 =
+  {\displaystyle{\int_{V\left( t\right) }^{}}\rho \underline{g}\cdot \underline{u}dv} + \overbrace{{\displaystyle{\int_{A\left( t\right) }^{}}\underline{f}\cdot \underline{u}dA}}^2 -\overbrace{{\displaystyle{\int_{A\left( t\right) }^{}}\underline{q}\cdot \underline{n}dA}}^3
+
+\end{equation*}
+Lavoro sul termine 1
+\[
+\displaystyle{\int_{A\left( t\right) }^{}}\rho e+\frac{1}{2}\rho u_ju_j\right) u_kn_k dA = \displaystyle{\int_{V}^{}}\pdev{}{x_i}\left[ \left( \rho e+\frac{1}{2}\rho u_ju_j\right) u_i\right] dV
+\]
+Il termine 2
+\[
+\displaystyle{\int_{A}^{}}\underline{f}\cdot \underline{n} dA =\displaystyle{\int_{A}^{}}\left( \underline{\underline{\tau}} \cdot \underline{n}\right) \underline{u}dA = \displaystyle{\int_{A}^{}}n_i \tau_{ij} u_jdA = \displaystyle{\int_{A}^{}}u_j\tau_{ij}n_i dA = \displaystyle{\int_{A}^{}}\left( \underline{\underline{\tau}}\cdot \underline{u}\right) \underline{n}dA = \displaystyle{\int_{V}^{}} \underline{\nabla}\cdot \left( \underline{\underline{\tau}} \cdot \underline{u}\right) dV
+\]
+Il termine 3
+\[
+\displaystyle{\int_{A}^{}}\underline{q}\cdot \underline{n}dA = \displaystyle{\int_{V}^{}}\underline{\nabla}\cdot \underline{q}dV = \displaystyle{\int_{V}^{}}\pdev{q_j}{x_j}dV
+\]
+Sostituisco tutto:
+\[
+\displaystyle{\int_{V\left( t\right) }^{}}\left[ \pdev{}{t}\left( \rho e+\frac{1}{2}\rho u_ju_j\right) +\pdev{}{x_j}\left[ \left( \rho e +\frac{1}{2}\rho u_ju_j\right) u_i\right]-\rho g_ju_j-\pdev{}{x_i}\left( u_j\tau_{ij}\right) +\pdev{q_i}{x_i}\right]dV =0  
+\]
+Dato che $ V\left( t\right)  $ è sempre un volume materiale qualsiasi, non ho scelto definito in altro modo. Dunque anche l' integrando è nullo:
+\[
+\pdev{}{t}\left( \rho e+\frac{1}{2}\rho u_ju_j\right) +\pdev{}{x_j}\left[ \left( \rho e + \frac{1}{2}\rho u_ju_j\right) u_i\right] -\rho g_ju_j-\pdev{}{x_i}\left( u_j\tau_{ij}\right) +\pdev{q_i}{x_i}
+\]
+TODO: Finisci di copiare equazioni p.18\\
+Voglio due equazioni separate per energia cinetica e energia interna\\
+Dall' equazione della quantità di moto:
+\[
+\left[ \pdev{}{t}\left( \rho \underline{u}+\dots \right) =0\right] \cdot \underline{u}  
+\]
+trovo l'equazione per energia cinetica
+\begin{equation}
+  \pdev{}{t}\left( \frac{1}{2}\rho u_iu_i\right) +\pdev{}{x_j}\left( \frac{1}{2}\rho u_iu_iu_j\right) =\rho u_ig_i+u_i\pdev{\tau_{ij}}{x_j}
+\end{equation}
+Sottraggo energia cinetica a energia totale $ \rightarrow  $ Energia Interna
+\[
+\pdev{}{t}\left( \rho e\right) +\pdev{}{x_j}\left( \rho eu_j\right) =\tau_{ij} \pdev{u_i}{x_j}-\pdev{q_i}{x_i}
+\]
+Così facendo le componenti di $ \underline{\underline{\tau}} $ non sono più indipendenti. Il sistema diventa determinato, con $ 7 $ equazioni e $ 7 $ incognite.
+
+\subsection{Condizioni Accessorie}
+Supponiamo di avere un' equazione differenziale ordinata (\emph{ODE}) del tipo:
+\[
+\frac{df}{dt}+f = 0 \to f'+f=0 
+\]
+La soluzione sarà
+\[
+f = ce^{-t}
+\]
+Devo porre una condizione iniziale per trovare $ C $ del tipo $ f\left( t_0\right) =f_0 $
+Nel nostro caso parliamo di \emph{PDE}, ovvero di equazioni differenziali parziali
+\[
+\pdev{}{t},\pdev{}{x_i}\to f\left( \underline{x},t\right) 
+\]
+Anche in questo caso sevono delle condizioni iniziali, ma anche delle condizioni dette al contorno
+\begin{align*}
+  f\left( \underline{x},t\right)  =&f_0\left( \underline{x}\right) &\to \text{Condizioni iniziali}\\
+  f\left( \underline{x},t\right)  =&f_c\left( \underline{x},t\right)\quad \left[ t\geq t_0\right]  &\to \text{Condizioni al contorno di Dirichlet}\\
+  \pdev{f}{x_i}=&f'_{c_i}\quad \left[ t\geq t_0\right]  &\to \text{Condizioni al contorno di Neumann}
+\end{align*}
+\begin{figure}[H]
+  \centering
+  \incfig{cilinder_fluid}{}
+  \caption{Caso generico}
+  \label{fig:cilinder_fluid}
+\end{figure}
+Per rappresentare il caso generico le equazioni a nostra disposizione sono:\\
+Massa:
+\[
+\rho_1 \underline{u}_1\cdot \underline{n}dA =\rho_2 \underline{u}_2\cdot \left( -\underline{n}\right) dA
+\]
+per un solido è chiaro che $ \underline{u}_" = 0\to \underline{u}_1 \cdot \underline{n} = 0 $ detta condizione di impenetrabilità.\\
+Quantità di moto:
+\[
+\left( \cancel{\rho _1 \underline{u}_1 \underline{u}_1 \cdot \underline{n}} +\underline{\underline{\tau}}_1 \cdot \underline{n}_1 \right) dA = \left( \cancel{\rho _1 \underline{u}_1 \underline{u}_1 \cdot \left( -\underline{n}\right) } +\underline{\underline{\tau}}_2 \left( -\underline{n}_2\right) \right) dA
+\]
+e dunque
+\[
+\underline{\underline{\tau}}_1 \cdot \underline{n} = - \underline{\underline{\tau}}_2 \cdot \underline{n} 
+\]
+infine Energia:
+\[
+\underline{q}_1 \cdot \underline{n}=\underline{q}_2 \cdot \left( -\underline{n}\right) \to k_1 \pdev{T_1}{n} = k_2\pdev{T_2}{n}
+\]
+Se il corpo 2 in \cref{fig:cilinder_fluid} è un solido:
+\begin{gather*}
+  \underline{u}_1 \underline{t} = 0 \to \text{fluido reale}\\
+  T_1 = T_2
+\end{gather*}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

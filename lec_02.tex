@@ -1,0 +1,139 @@
+\lecture{2}{gio 23 feb 2023 14:30}{Sutherland e Statica dei fluidi}
+\subsection{Legge di Sutherland}
+Vale anche per applicazioni tecniche
+\begin{equation}
+  \label{eq:sutherland}
+  \mu =\mu_0 (\frac{T}{T_0})^{1.5} \frac{T_0+S}{T+S} \simeq \underbrace{\mu_0\frac{T}{T_0}^{0.7}}_{\text{Approx per graficare}}
+\end{equation}
+con $S \to $ costante universale e $T_0,\mu_0$ termini di riferimento.
+Per i gas posso usare /cref{eq:sutherland}, per i liquidi abbiamo tabelle e grafici.\\
+Valori tipici:
+\begin{itemize}
+\item $ H_{2}O \to \mu =\num{1,137e-3 }\unit{\kilogram\per\metre.\second} \quad v = \num{1,38e-6 } \unit{m/s^2}$ 
+\item Aria $\to \mu =\num{1,78e-5 }\unit{\kilogram\per\metre.\second} \quad v = \num{1,45e-5 } \unit{m/s^2}$ 
+\end{itemize}
+Per misurare la velocità posso usare un tubo di Oswald, che misura quanto fluido passa nel tempo (dunque è soggetto a imprecisioni), oppure posso misurare la coppia a regime.
+Analizziamo il secondo approccio:
+\twominisw{
+  \begin{figure}[H]
+  \centering
+  \incfig{copp_reg}{}
+  \caption{Strumento utilizzato per calcolare la viscosità di un fluido. La parte esterna è ferma e piena di fluido, alla parte interna viene applicata una coppia. Quando questa coppia va a regime posso calcolare la viscosità (con molta più precisione rispetto al tubo di Oswald}
+  \label{fig:copp_reg}
+\end{figure}
+}{
+  \begin{equation}
+  \label{eq:copp_reg}
+  \begin{align}
+    \frac{du}{dr}=\frac{\omega r_1}{r_2-r_1}\\
+    \tau =\mu \frac{du}{dr}=\mu \frac{\omega r_1}{r_2-r_1}&\\
+    \tau dA \to \text{Forza}&\\
+    C = \int_0^{2\pi }\underbrace{(\mu \frac{\omega r_1}{r_2-r_1})}_{\tau }\overbrace{r_2}^{\text{Braccio}}\underbrace{(r_2d\theta)}_{dA}
+  \end{align}
+\end{equation}
+}{.7}{.29}
+
+\section{Statica dei Fluidi}
+Considero nel continuo una porzione di fluido piccola e sferica, in condizioni statiche:
+\begin{figure}[H]
+  \centering
+  \incfig{flux_sfera}{}
+  \caption{Piccola sfera di fluido. Tutti gli sforzi sono uguali per ipotesi di staticità.}
+  \label{fig:flux_sfera}
+\end{figure}
+Considero un cubo infinitesimo.
+Se considero una faccia 1 posso dividere gli sforzi sulla faccia in $ \tau_{11},\tau_{12},\tau_{13} $ con il secondo pedice che indica la direzione dello sforzo. Questi j-esimi sforzi esistono per ogni i-esima faccia. Dunque avrò un tensore $ \tau_{ij} $.
+\begin{equation}
+  \label{eq:tens_generico}
+  \tau_{ij} =
+  \begin{bmatrix}
+    \tau_{11} & \tau_{12} & \tau_{13} \\
+    \tau_{21} & \tau_{22} & \tau_{23}\\
+    \tau_{31} & \tau_{32} & \tau_{33}
+  \end{bmatrix}
+\end{equation}
+siccome siamo in statica esistono solo gli elementi $ \tau_{ii} $:
+\begin{equation}
+  \label{eq:tens_statico}
+  \tau_{ij} =
+  \begin{bmatrix}
+    \tau_{11} & 0 & 0\\
+    0 & \tau_{22} & 0\\
+    0 & 0 & \tau_{33}
+  \end{bmatrix} =
+  \begin{bmatrix}
+    -p & 0 & 0\\
+    0 & -p & 0\\
+    0 & 0 & -p
+  \end{bmatrix}
+  = -p \delta_{ij}\to p = -\frac{1}{3}\tau_{ii}
+\end{equation}
+con $ \tau_{ii} $ intendo $ {\displaystyle \sum_{i=1}^{3}\tau_{ii} $ ovvero uso la notazione di Einstein.\\
+La pressione $ p $ è detta pressione \emph{meccanica} e non è per forza uguale alla presione \emph{termodinamica} (data da $ P = \rho RT $). Tuttavia per le nostre applicazioni sono interscambiabili.
+Se considero un volume qualsiasi:
+\begin{figure}[H]
+  \begin{minipage}{.5\linewidth}
+    \begin{figure}[H]
+      \centering
+      \incfig{rand_vol}{}
+      % \caption{}
+      \label{fig:rand_vol}
+    \end{figure}
+  \end{minipage}
+  \begin{minipage}{.5\linewidth}
+    \begin{eqnarray*}
+      \label{eq:vol_qual}
+      % \begin{align}
+      &\underline{F} &= \int_{v} \rho \underline{F}dv - \int_A\rho \underline{n}dA\\
+      &\,        &=\int_v\rho \underline{F}dv -\int_A\rho \underline{n}dA = 0\\
+      &&\text{Applico il teorema della divergenza}\\
+      &\,&=\int_v\rho \underline{F}dv-\int_v\underline{\nabla}Pdv=0\\
+      &\,&=\int_v(\rho \underline{F}-\underline{\nabla}P)dv=0\\
+      \to \rho \underline{F}=\underline{\nabla}P
+      % \end{align}
+    \end{eqnarray*}
+  \end{minipage}
+\end{figure}
+Se considero $ \underline{F} = -\hat{k}g\downarrow $ e cioè considero la forza di volume agente sul fluido come esclusivamente la forza di gravità (verso $ -\hat{k} $) allora:
+\begin{eqnarray*}
+  \label{eq:calc_stev}
+  &-\rho g\hat{k} = \underline{\nabla}P& \\
+  &-\rho g \hat{k}=\frac{dP}{dz}\hat{k}&\\
+  &\frac{dP}{dz}=-g\rho(z)&
+\end{eqnarray*}
+Dato che i liquidi sono in generale comprimibili e dunque $ \rho  $ non dipende da z posso integrare e trovo la \emph{legge di Stevino}:
+\begin{equation}
+  \label{eq:stevino}
+  P = P_0 -\rho g z
+\end{equation}
+
+\subsection{Principio di Archimede}
+Dato un volume $ V $, con densità $ \rho_1 $ immerso in un fluido di densità $ \rho  $ defininisco due forze contrastanti:\\
+\begin{itemize}
+\item La Forza peso per unità di massa:
+\begin{equation}
+  \label{eq:frz_peso_Archimede}
+  % \caption{Forza peso per unità di massa}
+  \underline{F_P}=\int_V-\rhog \hat{k}dv = -\rho g V \hat{k}
+\end{equation}
+\item La Forza di galleggiamento:
+\begin{equation}
+  \label{eq:frz_galleggiamento}
+  % \caption{Forza di galleggiamento}
+  -\underline{F_g}=-\int_V\nabla Pdv
+\end{equation}
+\end{itemize}
+In generale se la densità interna $ \rho_1 $ è uguale alla densità esterna $ \rho  $ allora la sommatoria delle forze sarà nulla. Cioè:
+\begin{equation}
+  \rho_1=\rho \iff -\underline{F_G} + \underline{F_P} 
+\end{equation}
+Se invece le densità sono diverse ($ -\underline{F_G}+\underline{F_P} \neq 0 $), siccome $ -\underline{F_G} = \rho gV \hat{k} $ \cref{frz: e $ \underline{F_P}= -\rho_1gv \hat{k} $ l'equazione diventa:
+\begin{equation}
+  \label{eq:frz_archimede}
+  (gv \hat{k})(\rho -\rho_1) = \Delta \underline{F}
+\end{equation}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

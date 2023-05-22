@@ -1,0 +1,134 @@
+\lecture{13}{lun 27 mar 2023 14:30}{Sistemi di riferimento non cartesiani, Hagen-Poiseuille, Taylor-Covette}
+
+\section{Sistemi di Riferimento non cartesiani}
+Se cambio l'origine della terna non ho problemi nel definire la nuova terna.
+In tutti gli altri casi invece si presentano diversi problemi.
+Per esempio se passo da  una terna in 3D composta da vettori ortonormali $ \vec{i},\vec{j},\vec{k} $ è molto semplice cambiare l'origine della terna e ridefinire i punti dello spazio in base alla nuova terna.
+Se ho coordinate circolari il discorso si complica ma non troppo.\\
+Applico il cambio di coordinate a Navier-Stokes
+\begin{gather*}
+  \underline{\nabla}\cdot \underline{u} = 0 \rightarrow  \frac{1}{r}\pdev{}{r}\left( ru_r \right)  + \frac{1}{r}\pdev{u_\theta }{\theta }+\pdev{u_z}{z}=0\\
+  \underline{u}\cdot \underline{\nabla} \underline{u} \rightarrow \text{ sarebbero 11 termini!!}
+\end{gather*}
+Diventa evidente che il discorso si complica (le equazioni sono comunque leggibili dal Kunda).\\
+
+\subsection{Flusso di Hagen-Poiseiulle}
+Consideriamo il flusso di Poiseuille in 3D, chiamato anche flusso di Hagen-Poiseuille.
+Le nostre ipotesi sono:
+\begin{itemize}
+\item Problema stazionario: $ \pdev{}{t}=0 $ 
+\item Direzione $ z $ omogenea: $ \pdev{u}{t}=\pdev{v}{t} =0 $
+\item $ \pdev{P}{z} \exists $ ed è costante (se non c'è gradiente non c'è movimento)
+\item Problema assialsimmetrico: $ \pdev{}{\theta }=0 \rightarrow u_\theta =\operatorname{cost} $
+\item Fluido incomprimibile
+\item No forze di volume (forza peso)  
+\end{itemize}
+Da queste ipotesi posso dire che 
+\[
+  u = u_z\left( r_k\right) \vec{k}
+\]
+Aggiungo la \emph{no slip condition}
+\[
+  u\left( R\right) =0
+\]
+Analizzo le varie equazioni
+\begin{gather*}
+  -\mu \nabla^2u_z + \pdev{P}{z}=0\\
+  -\mu \frac{1}{r}\pdev{}{r}\left( r\pdev{u_z}{r}\right) +G_P=0\\
+  -\mu \frac{1}{r}\frac{d }{d r}\left( r\frac{d u_z}{dr }\right) +G_P\\
+  \mu \frac{1}{r}\left( r u^{\prime}\right)^{\prime}=G_P
+\end{gather*}
+Servono due condizioni al contorno:
+\[
+  \left( ru^{\prime}\right) ^{\prime}=\frac{G_P}{\mu }r
+\]
+\begin{equation*}
+  \begin{cases}
+    u\left( 0\right) = \text{ Non deve divergere a centro canale} \\
+    u\left( R\right) =0 \text{ Velocità nulla a parete} 
+  \end{cases}
+\end{equation*}
+Integro due volte e trovo 
+\[
+  u\left( r\right)  = \frac{G_P}{4\mu }r^2+A\ln r+B
+\]
+Aggiungendo a questa equazione le condizioni al contorno trovo 
+\begin{equation}
+  u\left( r\right) = \frac{G_P}{4\mu }\left( r^2-R^2\right) 
+\end{equation}
+Analizzando il caso pratico e fisico trovo che 
+\begin{gather*}
+  u_{\text{max}} = - \frac{G_P}{4\mu }R^2\\
+  Q = -\frac{\pi}{8}G \frac{R^4}{u} \rightarrow \overline{U} = \frac{Q}{\pi R^2}=-\frac{GR^2}{8\mu }=\frac{1}{2}u_{\text{max}}\\
+  G = - \frac{{8 \mu \overline{U}}}{R^2}\rightarrow G^* = \frac{G}{\rho \overline{U}^2}\left( 2R\right) = -\frac{16}{Re}=-16\frac{\mu}{\rho \overline{U}R}
+\end{gather*}
+Nella seguente tabella si illustra le differenze tra il flusso piano e quello cilindrico
+\begin{table}[H]
+  \centering
+  \Large
+  \begin{tabular}[H]{c|c|c|c}
+    & $ u_\text{max}  $ & $ \overline{U} $ & $ G^* $\\ \hline
+    Piano & $ -\frac{Gh^2}{8\mu } $ & $ \frac{2}{3}u_\text{max}  $ & $-\frac{12}{Re}$\\
+    Cilindrico & $ -\frac{GR^2}{4\mu } $ & $ \frac{1}{2}u_\text{max}  $ & $-\frac{16}{Re}$\\
+                                              
+  \end{tabular}
+\end{table}
+
+\section{Problema di Taylor-Covette}
+\begin{figure}[H]
+  \centering
+  \incfig{copp_reg}{}
+\end{figure}
+
+\begin{gather*}
+  \pdev{}{t} = 0 \qquad \pdev{}{\theta }=0\\
+  u = u_\theta \left( r\right) \underline{e_\theta}\\
+  \underline{u}\left( R_1\right)  = \Omega_1 R_1\underline{e_\theta}\\
+  \underline{u}\left( R_2\right)  = \Omega_2 R_2\underline{e_\theta}\\
+  \underline{u}\cdot \underline{\nabla} \underline{u} =-\frac{1}{r}u_\theta ^2 \underline{e_r}\\
+  \nabla^2 \underline{u} = \left[ \frac{1}{r}\pdev{}{r}\left( r\pdev{u_\theta }{r}-\frac{1}{r^2}u_\theta \right] e_z
+  \end{gather*}
+Le tre equazioni di navier-stokes diventano
+  \begin{equation*}
+    \begin{cases}
+      -\frac{1}{r}u_\theta ^2=-\frac{1}{\rho }\pdev{P}{r}\\
+      -\frac{1}{r}\pdev{}{r}\left( r\pdev{u_\theta }{r}\right) -\frac{1}{r^2}u_\theta =0 \rightarrow \underbrace{\frac{d }{d r}{\left[ \frac{1}{r}\frac{d }{d r}\left( ru_\theta \right) \right] }}_{\operatorname{cost}}=0\\
+      0 =0
+    \end{cases}
+\end{equation*}
+\[
+  \frac{1}{r}\frac{d }{d r}\left( r u_\theta \right) =A \rightarrow d\left( ru_\theta \right)  = Ardr \rightarrow r u_\theta  = \frac{1}{2}Ar^2+B \rightarrow u_\theta =\frac{1}{2}Ar+ \frac{B}{r}
+\]
+Ma ancora non so quali sono le due costanti $ A $ e $ B $.
+Le trovo con le condizioni al contorno che ho scritto prima.
+Cioè:
+\begin{equation*}
+  \begin{cases}
+    u_\theta \left( R_1\right) =\Omega _1R_1=\frac{1}{2}A R_1 + \frac{B}{R_1}\\
+    u_\theta \left( R_2\right) =\Omega _2R_1=\frac{1}{2}A R_2 + \frac{B}{R_2}
+  \end{cases}
+\end{equation*}
+Sostituisco $ B $:
+\[
+  \Omega _2 R_2^2 - \Omega_1 R_1^2 = \frac{1}{2}A\left( R_2^2-R_1^2\right) 
+\]
+E trovo:
+\[
+  A = 2 \frac{{\Omega_2 R_2^2 - \Omega _1R_1^2}}{R_2^2-R_1^2} \qquad\qquad B = \frac{{\left( \Omega_1 - \Omega _2\right)  R_1^2R_2^2}}{R_2^2-R_1^2} 
+\]
+\[
+  u_\theta  = \frac{1}{2}Ar + \frac{B}{r}
+\]
+
+\subsection{Casi Particolari}
+\begin{itemize}
+\item Per $ R_1 \to 0$ , $  \Omega _1 \to 0 \implies  u_\theta \left( r\right)  = \Omega r $ 
+\item Per $ R_2 \to \infty $ , $  \Omega _2 \to 0 \implies  u_\theta \left( r\right)  = \Omega_1 R_1^2 \frac{1}{r} $ 
+\end{itemize}
+\\
+\hline
+\vspace{1ex}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

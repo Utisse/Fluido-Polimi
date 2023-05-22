@@ -1,0 +1,109 @@
+\lecture{1}{mar 21 feb 2023 14:30}{intro}
+
+Che cosa significa fluido? Quali sono le differenze con un solido?\\
+I fluidi possono essere sia liquidi che gas.
+Entrambi rientrano nella classificazione di Fluidi perchè obbediscono alla stessa (vasta) gamma di equazioni.
+\begin{figure}[H]
+    \centering
+    \incfig{solliqgas}{}
+    % \caption{}
+    % \label{fig:cubo}
+  \end{figure}
+  Quando due oggetti solidi si toccano si ha un interazione tra i i protoni e gli elettroni.
+  Lo stesso accade con i fluidi.
+  Prendo in considerazione due molecole di un fluido ad una certa distanza $d$.
+% \begin{figure}[H]
+%     \centering
+%     \incfig{molecole_fluido}
+%   \end{figure}
+  \twomini{
+  \begin{figure}[H]
+    \centering
+    \incfig{dist_min}{}
+  \end{figure}}{
+  \begin{tabular}{|c|c|c|c|}
+     & $F$ & $\lambda$ & Posizione\\
+    \hline
+    Solidi & grandi & $<d_0$ & ordinata \\
+    Liquidi & grandi & $\approx d_0$ & no\\
+    Gas & deboli & $\gg d_0$ & no
+    \end{tabular}
+  }
+  Se le molecole sono lontane è valida l'approssimazione di gas perfetto $P=\rho RT$.\\
+  \section{Ipotesi del continuo}
+  Se considero un volume molto piccolo noto come la densità ($\rho$) varia molto rapidamente.
+  Mano a mano che aumento la dimensione del mio volumetto la densità si stabilizza fino a divenire costante.
+  Su questo fatto sperimentale si basa la validità dell'ipotesi del continuo.\\
+  Grazie ad essa posso non considerare il fluido al livello molecolare ma parlare di fluido in toto, con alcune caratteristiche generali.\\
+  % \begin{figure}[H]
+    % \centering
+    % \incfig{ip_continuo}
+    % \end{figure}
+  Tutto questo ovviamente dipende da $ \lambda  $ ovvero il cammino libero medio.
+  Nell'aria $ \lambda \approx 70 \unit{nm} $, mentre nell'acqua è $ \lambda \approx 0.1 \unit{nm}$\\
+  \subsection{Numero di Knudsen}
+  Introduciamo inoltre una quantità adimensionale chiamata numero di Knudsen.
+  \begin{equation}
+    \label{eq:knudsen}
+    k = \frac{\lambda}{L}
+  \end{equation}
+  Il numero di Knudsen mette in relazione il cammino libero medio ($ \lambda  $) e la scala di riferimento ($ L $), che è la misura che caratterizza al meglio il nostro problema (per un flusso intorno ad un ala è la corda di quest'ultima, per un tubo il suo diametro, ecc.).\\
+  Analizzando il numero di Knudsen si può valutare la validità dell'ipotesi del continuo:
+  \begin{equation}
+    \label{eq:cont_raref}
+    \begin{aligned}
+      \text{Continuo} \to\, &k\ll 1\\
+      \text{Rarefatto} \to\, &k\gg 1
+    \end{aligned}
+  \end{equation}
+  Si noti inoltre che se il fluido è rarefatto influisce anche su altri fenomeni fisici come la diffusione termica.\\
+  Consideriamo ora un fluido con regioni di temperatura diverse (stratificato).
+  \twomini{
+  \begin{figure}[H]
+    \centering
+    \incfig{fluxDiffTemp}{}
+    \end{figure}
+  }{
+    \centering
+    Legge di Fourier:
+    \begin{equation}
+      \label{eq:fourier}
+      \underline{q} = -k\underline{\nabla}T \qquad [\unit{J/m^2s}] 
+    \end{equation}
+  }
+  La temperatura nel serbatoio tende a uniformarsi.
+  La legge di Fourier (\cref{eq:fourier}) definisce il flusso di calore che omogenizza la temperatura. La stessa cosa avviene per la quantità di moto.
+  \twomini{
+  \begin{figure}[H]
+    \centering
+    \incfig{diffQM_Graph}{.5}
+    \end{figure}
+  }{
+    \centering
+    Viscosità dinamica:
+    \begin{equation}
+      \label{eq:visc_din}
+      \mu  \quad [\unit{kg/ms}] 
+    \end{equation}
+    \begin{equation}
+      \label{eq:sforzo}
+      \tau =\mu \frac{d\underline{u}}{d y}
+    \end{equation}
+    \begin{equation}
+      \label{eq:visc_cin}
+      v =\frac{\mu}{\rho} \quad [\unit{m^2 / s}]
+    \end{equation}
+  }
+  La velocità tende a omogenizzarsi: lo strato più lento accelera mentre lo strato più veloce rallenta sbattendo contro lo strato più lento.
+  L'attrito tra i due strati si chiama sforzo e \cref{eq:sforzo} che la definisce è valida solo per fliudi newtoniani: negli altri fluidi lo sforzo non dipende esplicitamente da $ \frac{d \underline{u}}{dy} $. Im questo caso il fluido è detto \emph{viscoelastico}.
+  $ \mu  $ è detta \emph{viscosità dinamica} (\cref{eq:visc_din}) e $ v $ è detta \emph{viscosità cinematica} (\cref{eq:visc_cin}).\\
+  In generale la viscosità dipende dalla temperatura:
+  \begin{itemize}
+  \item Nei gas la viscosità aumenta con la temperatura $ \to T\uparrow \mu\uparrow$ (con $ T $ elevato ad una costante $ k $    
+  \item Nei liquidi la viscosità diminuisce all'aumentare della temperatura $ \to T\uparrow \mu\downarrow  $ (rompo legami intermolecolari con energia termica) 
+  \end{itemize}
+  
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

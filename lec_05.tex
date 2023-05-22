@@ -1,0 +1,100 @@
+\lecture{5}{lun 06 mar 2023 14:30}{Bilanci, Teorema di Reynolds}
+Chiaramente è possibile che $ \alpha <0 $.
+In questo caso è evidente che si ha una rotazione di qualche tipo.
+Infatti:
+\[
+  \frac{1}{2}\frac{D}{Dt}(-\alpha +\beta ) = \frac{1}{2} \displaystyle{\lim_{\Delta t\to0}}\frac{-\delta \alpha +\delta \beta }{\Delta t}= \frac{1}{2}\left(-\pdev{u_1}{x_2}+\pdev{u_2}{x_1}\right)=\frac{1}{2}\omega_3 = \frac{1}{2}R_{12}
+\]
+Dunque:
+\[
+  \underline{\nabla}\underline{u}=\underline{\underline{S}}+\frac{1}{2}\underline{\underline{R}} \qquad \pdev{u_i}{x_j}=S_{ij} + \frac{1}{2}R_{ij}
+\]
+Il differenziale di velocità tra due punti è:
+\[
+du_i = \left( S_{ij} +\frac{1}{2}R_{ij}\right) dx_j= \overbrace{{\left[ E_{ij} + \left( S_{ij} -\frac{1}{3}S_{kk}\delta_{ij} \right) \right]}}^{S_{ij}} dx_j -\overbrace{{\frac{1}{2}\varepsilon_{ijk} \omega_k}}^{\frac{1}{2}R_{ij}} dx_j
+\]
+
+\section{Bilanci}
+\subsection*{Teorema di Leibniz}
+
+\begin{gather*}
+  \frac{d}{dt} \displaystyle{\int_{a\left( T\right) }^{b\left( t\right) }} F\left( x,t\right) dx
+  = \displaystyle{\int_{a}^{b}}\frac{dF}{dt}dx + \frac{db}{dt}F\left( b,t\right) -\frac{da}{dt}F\left( a,t\right) 
+\end{gather*}
+\begin{figure}[H]
+    \centering
+    \incfig{bilanci}{}
+    % \caption{Bilanci}
+    \label{fig:bilanci}
+\end{figure}
+In tre dimensioni il teorema si chiama \emph{Teorema di Reynolds} o del trasporto.
+\subsection{Teorema di Reynolds}
+Il teorema dice:
+\begin{equation}
+  \label{eq:th_reynolds}
+  \frac{d}{dt} \displaystyle{\int_{V\left( t\right) }^{}}F\left( \underline{x},t\right) dv=\displaystyle{\int_{v}^{}}\left[ \frac{Df}{Dt} + F \underline{\nabla} \cdot \underline{v}\right] 
+\end{equation}
+
+Questa è la formulazione del teorema di Raynolds
+\begin{gather*}
+  \frac{d}{dt} \displaystyle{\int_{V\left( t\right) }^{}}F\left( \underline{x},t\right) =
+  \displaystyle{\int_{V\left( t\right) }^{}} \pdev{F\left(\underline{x},t\right)  }{t}dv + \displaystyle{\int_{A\left( t\right) }^{}}F\left( \underline{x},t\right) \underline{v}\left( \underline{x},t\right) d \underline{A}\\
+  =\frac{d}{dt} \displaystyle{\int_{V\left( t\right) }^{}}FdV = \displaystyle{\int_{v\left( t\right) }^{}} \pdev{F}{t}dv +\displaystyle{\int_{A\left( t\right) }^{}}F \underline{v} \underline{n}dA=\\
+   = \displaystyle{\int_{V}^{}} \left[ \frac{Df}{Dt} + F \underline{\nabla} \cdot \underline{v}\right] dv
+\end{gather*}
+\begin{figure}[H]
+    \centering
+    \incfig{volume_ovale}{}
+    % \caption{volume_ovale}
+    \label{fig:volume_ovale}
+\end{figure}
+\subsection{Dinamica dei Fluidi}
+
+\subsubsection{Conservazione della massa}
+\begin{figure}[H]
+    \centering
+    \incfig{volume_ovale_fermo}{.5}
+    \caption{Volume materiale: Si sposta con $ \underline{u} $, cioè con le particelle che lo compongono}
+    \label{fig:ovale_volume}
+\end{figure}
+Per un volume materiale come in \cref{fig:ovale_volume} la massa non può variare.
+Dunque posso scrivere:
+\[
+\frac{d}{dt} \displaystyle{\int_{v}^{}}\rho\left( \underline{x},t\right) dv = 0
+\]
+Applicando il teorema di Reynolds \cref{eq:th_reynolds}
+\[
+\frac{d}{dt} \displaystyle{\int_{V\left( t\right) }^{}}\rho dv = \displaystyle{\int_{v\left( t\right) }^{}}\pdev{\rho }{t}dv + \displaystyle{\int_{A\left( t\right) }^{}}\rho\, \underline{u}\,\underline{n}\,dA = 0
+\]
+Ora considero un volume di controllo qualunque (non materiale) con $ \underline{b} \to$ velocità del volume $ V^* $, diversa dalla velocità $ \underline{u} $ del fluido.
+\[
+  \frac{d}{dt} \displaystyle{\int_{V^*}^{}}\rho dv = \displaystyle{\int_{V^*}^{}} \pdev{\rho }{t} dv + \displaystyle{\int_{A^*}^{}}\rho \underline{b}\underline{n}dA \neq 0
+\]
+Scelgo $ \overline{t} $ in cui $ V\left( \overline{t}\right) =V^*\left( \overline{t}\right)  $ e $ A\left( \overline{t}\right) = A^* \left( \overline{t}\right) $, posso farlo in qualsiasi istante dato che $ \overline{t} $ è un istante qualsiasi.
+\[
+  \frac{d}{dt}\displaystyle{\int_{V^+}^{}}\rho dv \neq \frac{d}{dt} \displaystyle{\int_{V}^{}}\rho dv \quad\mid \quad \displaystyle{\int_{V^*}^{}}\pdev{\rho }{t}dv = \displaystyle{\int_{V}^{}}\pdev{\rho }{t}dv \quad\mid\quad \displaystyle{\int_{A^*}^{}}\rho \underline{u}\underline{n} dA = \displaystyle{\int_{A}^{}}\rho \underline{u}\underline{n}dA
+\]
+$ \dots  $
+\begin{equation}
+  \frac{d}{dt} \displaystyle{\int_{V^*}^{}}\left[ \pdev{\rho }{t}+\underline{\nabla} \left( \rho \underline{u}\right) \right] dv = 0
+\end{equation}
+Dato che $ V^* $ è un volume qualsiasi significa che anche l'integrando è $ =0 $. Dunque posso scrivere ciò che si chiama \emph{equazione generale della conservazione della massa fluidodinamica} o \emph{equazione di continuità}
+\begin{equation}
+  \label{eq:continuità}
+  \pdev{\rho }{t} + \underline{\nabla} \left( \rho \underline{u}\right) =0
+\end{equation}
+Nel caso di fluido incomprimibile ($ \underline{\nabla} \underline{u} =0 $) allora:
+\begin{gather*}
+  \pdev{\rho }{t} + \underline{u}\underline{\nabla}\rho + \rho \cancel{\underline{\nabla} \underline{u}} = 0\\
+  \pdev{\rho }{t} + \underline{u} \underline{\nabla}\rho =0
+\end{gather*}
+\begin{equation}
+  \frac{D\rho }{t} = 0
+\end{equation}
+Questa equazione è valida solo nel caso in cui sono applicabili ipotesi di non comprimibilità. Ovvero $ u\ll c $ con $ c $ velocità del suono del fluido. In altre parole $ \operatorname{Ma} \ll 1 $ 
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

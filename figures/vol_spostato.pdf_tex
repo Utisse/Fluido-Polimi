@@ -1,0 +1,83 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'vol_spostato.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{952.33333077bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.47606834)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{vol_spostato.pdf}}%
+    \put(0.17030357,0.38853313){\color[rgb]{1,0.70980392,0.02745098}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}B\end{tabular}}}}%
+    \put(0.16312731,0.13857083){\color[rgb]{1,0.70980392,0.02745098}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0.38525037,0.14967576){\color[rgb]{1,0.70980392,0.02745098}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\end{tabular}}}}%
+    \put(0.79471454,0.30205703){\color[rgb]{1,0.70980392,0.02745098}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}B'\end{tabular}}}}%
+    \put(0.67139401,0.08245992){\color[rgb]{1,0.70980392,0.02745098}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A'\end{tabular}}}}%
+    \put(0.88151434,0.12241267){\color[rgb]{1,0.70980392,0.02745098}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C'\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{vol_spostato.pdf}}%
+    \put(0.33882564,0.00541122){\color[rgb]{0.40392157,0.40392157,0.40392157}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u_1\Delta t$\end{tabular}}}}%
+    \put(0.51331213,0.08226562){\color[rgb]{0.40392157,0.40392157,0.40392157}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u_2\Delta t$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{vol_spostato.pdf}}%
+    \put(0.17408168,0.43581869){\color[rgb]{0.64705882,0.09803922,0.66666667}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\underline{u}_2 + \frac{\partial u_2}{\partial x_2}\delta x_2$\end{tabular}}}}%
+    \put(-0.07271208,0.41327937){\color[rgb]{0.08627451,0.6,0.19607843}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\underline{u}_1 + \frac{\partial u_1}{\partial x_2}\delta x_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{vol_spostato.pdf}}%
+    \put(0.08566481,0.15475778){\color[rgb]{0.08627451,0.6,0.19607843}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u_1$\end{tabular}}}}%
+    \put(0.05508779,0.06261072){\color[rgb]{0.64705882,0.09803922,0.66666667}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u_2$\end{tabular}}}}%
+    \put(0.21309508,0.06989752){\color[rgb]{0.64705882,0.09803922,0.66666667}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u_2+\pdev{u_2}{x_1}\delta x_1$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{vol_spostato.pdf}}%
+    \put(0.42927807,0.18998786){\color[rgb]{0.08627451,0.6,0.19607843}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u_2+\frac{\partial u_2}{\partial x_1}\delta x_1$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{vol_spostato.pdf}}%
+    \put(0.68901709,0.25696893){\color[rgb]{0.18823529,0.54901961,0.74509804}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta \alpha$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{vol_spostato.pdf}}%
+    \put(0.77801236,0.02907401){\color[rgb]{0.14117647,0.47058824,0.11372549}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta \beta$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{vol_spostato.pdf}}%
+    \put(0.68863539,0.33627877){\color[rgb]{0.6627451,0.13333333,0.13333333}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta x_2 \delta \alpha$\end{tabular}}}}%
+    \put(0.92231559,0.08144401){\color[rgb]{0.6627451,0.13333333,0.13333333}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta x_1 \delta \beta$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

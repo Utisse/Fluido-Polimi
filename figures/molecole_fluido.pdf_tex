@@ -1,0 +1,82 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'molecole_fluido.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1014.67226524bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.52146528)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{molecole_fluido.pdf}}%
+    \put(0.2651622,0.34129859){\color[rgb]{0.10196078,0.10196078,0.10196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{molecole_fluido.pdf}}%
+    \put(0.73165381,0.32415816){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0.66232172,0.37439365){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{molecole_fluido.pdf}}%
+    \put(0.58569652,0.32566494){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{molecole_fluido.pdf}}%
+    \put(0.66232172,0.37439365){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{molecole_fluido.pdf}}%
+    \put(0.58569652,0.32566494){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{molecole_fluido.pdf}}%
+    \put(0.73149063,0.32375875){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{molecole_fluido.pdf}}%
+    \put(0.9419074,0.07018797){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0.87257531,0.12042344){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{molecole_fluido.pdf}}%
+    \put(0.79595011,0.07169474){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{molecole_fluido.pdf}}%
+    \put(0.87257531,0.12042344){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{molecole_fluido.pdf}}%
+    \put(0.79595011,0.07169474){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{molecole_fluido.pdf}}%
+    \put(0.94174423,0.06978855){\color[rgb]{0.03921569,0.41176471,0.81568627}\transparent{0.42605901}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{molecole_fluido.pdf}}%
+  \end{picture}%
+\endgroup%

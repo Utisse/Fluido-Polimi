@@ -1,0 +1,128 @@
+\lecture{23}{lun 15 mag 2023 14:35}{Von Karman: Metodo di Thwaites}
+L'equazione di Von Karman è molto più semplice da risolvere con metodi numerici.\\
+Se lo strato limite è ben aderente, la forma della curva è sempre concava. Cioè
+\[
+  \pdev{^2u}{y^2} \quad \pdev{u}{y}
+\]
+invece se il fluido si separa succede che la curva diventa convessa e la derivata prima diminuisce. Nel punto di separazione
+\[
+  \pdev{u}{y} =0 \quad \tau _w =0
+\]
+E lo strato limite smette di essere sottile anzi diventa molto largo.\\
+Introduciamo una costante adimensionale:
+\[
+  \eta =\frac{y}{\theta }
+\]
+Mentre la velocità adimensionata è:
+\[
+  U=\frac{u}{U_e}
+\]
+Il profilo di velocità nello strato limite è caratterizzato da:
+\begin{itemize}
+\item $\left \pdev{^2U}{\eta ^2}\right|_{\eta =0} $ curvatura del profilo a parete, legata alla derivata della velocità esterna
+\item $ \left \pdev{U}{\eta }\right|_{\eta =0} $ pendenza del profilo a parete.
+\end{itemize}
+
+\begin{gather*}
+  \pdev{^2U}{\eta ^2} = \frac{\theta^2}{U_e} \pdev{^2u}{y^2}=\\
+  =\frac{\theta^2}{U_e\nu }\nu \pdev{^2u}{y^2}\\
+\end{gather*}
+Applico prandlt a parete $ u\cancel{\pdev{u}{x}}+ \nu\cancel{\pdev{u}{y}}=-\frac{1}{\rho }\pdev{p}{x}+\nu   \pdev{^2u}{y^2}$\\
+Trovo il parametro $ l $ 
+\[
+  l = \frac{{\theta U_e}}{\nu }\frac{C_F}{2}
+\]
+Thwaites assunse che i parametri $ l $ e $ H  $ fossero unicamante funzioni di $ \lambda  $ detto parametro di Thwaites. Questa assunzione è confermata da i dati sperimentali e poi trasformata in legge (entrambe algebriche) per moti accelerati e decelerati.
+\cref{https://pier.unirc.eu/note_varie/note/node45.html}Link sul quale si parla di sta roba\\
+Una volta noto $ \theta \left( x\right)  $ si ottengono:
+\begin{itemize}
+\item Il parametro di Thwaits $ \lambda \left( x\right) \frac{{\theta \left( x\right) }}{\nu }\frac{d U_e\left( x\right) }{d x} $
+\item I fattori $ l\left( x\right)  $ ed $ H\left( x\right)  $ dalle formule di Cebecy-Bradshaw.
+\item Lo spessore di spostamento $ \delta ^*\left( x\right)  = H\left( x\right) \theta \left( x\right)  $
+\item Il coefficiente di attrito $ C_f =2  $ 
+\end{itemize}
+\hline
+\vspace{1ex}
+
+\section{Strati limiti liberi}
+Correnti che non strisciano su pareti ma comunque soddisfano le equazioni dello strato limite. Tipo le scie: dietro il corpo i due strati limite si scontrano creando il profilo di scia, nato da un flusso che si scontra contro un corpo solido. Il profilo della velocità può cambiare radicalmente anche andando a velocità negative (corpi tozzi). Al centro della scia c'è una buca di velocità. La buca di velocità tende a zero e la curva tende all' infinito.
+Oppure i getti.\\
+Oppure gli strati di mescolamento (mixing layers) formati dall' incontro di due flussi con due velocità diverse. Il profilo di velocità è prima discontinuo ma poi si scambia quantità di moto per trovare un equilibrio. La diffusione nelle regioni successive all' incontro delle due correnti scambia quantita di moto e la differenza a distanza dall' incontro sarà lungo una distanza molto estesa.\\
+Per risolvere questi flussi possiamo usare le equazioni di Prandlt [\cref{eq:prandlt}] poichè $ \pdev{p}{y}\approx  0 $ e $ x\gg L $ con $ L  $ dimensione caratteristica del problema.   
+Ma le condizioni al contorno sono diverse.
+In questi casi conviene prendere come asse di simmetria l'asse delle $ x $.
+Lungo l'asse di simmetria impongo: 
+\[
+  y = 0\quad v = 0 \quad \pdev{u}{y}=0
+\]
+Nelle condizioni asintotiche le asimmetrie vengono cancellate.
+Inoltre sia per le scie che per i getti posso dire che
+\[
+  y\to \pm \infty \rightarrow u \to U_e = \operatorname{cost} 
+\]
+Per poter risolvere il problema devo anche conoscere in un punto il profilo di velocità.\\
+Invece per i \emph{mixing layers} trovo
+
+\begin{equation*}
+  \begin{cases}
+    y \to +\infty\rightarrow u\to U_{up}\\
+    y \to -\infty\rightarrow u\to U_{down}
+  \end{cases}
+\end{equation*}
+\subsection{Soluzioni autosimili strato limite}
+
+\[
+  \eta =\frac{y}{\delta \left( x\right) }\quad \frac{u}{U_e}=f^{\prime}\left( \eta \right) \quad \psi = U_e\left( x\right) \delta \left( x\right) f\left( \eta \right)  \quad \delta \left( x\right) =\frac{x}{\sqrt{Re_x}}
+\]
+\subsubsection{Soluzioni autosimili strato limite libero}
+
+\[
+  \eta =\frac{y}{b\left( x\right) }\quad \frac{u}{U_e}=f^{\prime}\left( \eta \right)  \quad \psi=U_e\left( x\right) b\left( x\right) f\left( \eta \right) 
+\]
+La $ b\left( x\right)  $ che è la larghezza del flusso di partenza è esprimibile come
+\[
+  b\left( x\right) =\frac{x}{\sqrt{Re_x}}
+\]
+Prendiamo in esame per esempio un getto in ambiente fermo composto da un canale racchiuso tra due pareti. Il triangoloide formato dai due strati di mescolamento si chiama nucleo potenziale ???. Dal punto di contatto dei due strati abbiamo una velocità $ U_c\left( x\right)  $. L'adimensionalizzazione è la seguente
+\[
+  \eta = \frac{y}{b\left( x\right) }\quad \frac{u\left{x,y\right}}{U_c\left( x\right) }=f^{\prime}\left( \eta \right) \quad \psi = U_c\left( x\right) b\left( x\right) f\left( \eta \right)
+\]
+
+\begin{equation*}
+  J = \displaystyle{\int_{-\infty }^{\infty }}\rho u^2dy=\operatorname{cost} \quad \forall x
+\end{equation*}
+Se cerchiamo soluzioni autosimili
+\[
+  u\left( x,y\right)  = ax^nf^{\prime}\left( \eta \right) 
+\]
+\[
+  J = \displaystyle{\int_{-\infty }^{\infty }}a^2x^{n2} f^{\prime 3}\left( \eta \right) \frac{1}{d\eta /dy}d\eta = \displaystyle{\int_{-\infty }^{\infty }}a^2x^{2n}f^{\prime2}\left( \eta \right)b\left( x\right) d\eta=  
+\]
+\[
+  =\displaystyle{\int_{-\infty }^{\infty }}\sqrt{\frac{\nu}{a}}a^2x^{2n} f^{\prime2}x^{\frac{{1-n}}{2}}d\eta = \displaystyle{\int_{-\infty }^{\infty }} \sqrt{{\nu a^3}}x^{\frac{{3n+1}}{2}}f^{\prime}d\eta =\operatorname{cost} 
+\]
+troviamo che $ n = -\frac{1}{3} $\\
+Passiamo direttamente alla soluzione:
+\[
+  u\left( x,y\right) =\frac{2}{3}\alpha ^2x^{-\frac{1}{3}}\left[ 1-\tanh^2\left( \alpha \eta \right) \right] 
+\]
+con
+\[
+  \alpha = {u\left( \frac{{\theta J}}{16\rho \nu^{\frac{1}{2}}\right)}^{\frac{1}{3}}
+\]
+Passando rapidamente alle scie:
+\[
+  \LARGE
+  \frac{{U_\infty -u\left( x,y\right)}}{U_\infty }=\operatorname{cost} x^{-\frac{1}{2}}e^{-\frac{U_\infty}{4\nu }\frac{y^2}{x}}
+\]
+Per i mixing layers trovo che 
+\[
+  u\left( x,y\right)  =U_1f^{\prime}\left( \eta \right) 
+\]
+\[
+  f^{\prime\prime\prime}+\frac{1}{2}ff^{\prime}=0
+\]
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

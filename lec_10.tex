@@ -1,0 +1,133 @@
+\lecture{10}{ven 17 mar 2023 14:30}{Bernulli}
+Date le precendenti supposizioni riguardandi un fluido:
+\[
+\mu \sim 0  \quad \mu_v \sim0 \quad \underline{g}=-\underline{\nabla}\phi \quad \rho =\rho \left( P\right) \iff P=P\left( \rho \right) 
+\]
+e cioè, fluido non viscoso (1 e 2), ipotesi di forze conservative di volume (3) e flusso barotropico (4), posso dedurre che la densità e la pressione non dipendono dalla temperatura. Le seguenti affermazioni sono valide per il nostro caso particolare del flusso barotropico:
+\begin{itemize}
+\item $ \rho  $ = costante ovunque
+\item $ T $ = costante
+\item $ \delta  $ costante
+\end{itemize}
+Defnisco dunque un potenziale barotroppico
+\[
+dF = \frac{dP}{\rho }
+\]
+Se è un differenziale esatto allora
+\[
+F\left( P\right)  = \displaystyle{\int_{P_0}^{P}} \frac{dP'}{\rho \left( P'\right) }
+\]
+Se $ P = \operatorname{cost}  $ allora l' integrale è immediato $ F = \frac{{P-P_0}}{\rho } $. Per calcolare il gradiente del potenziale:
+\[
+\pdev{F}{x_i}=\pdev{F}{P}\cdot \pdev{P}{x_i} =\frac{1}{\rho }\pdev{P}{x_i}
+\]
+che in forma vettoriale diventa
+\[
+\underline{\nabla}F=\frac{1}{\rho }\underline{\nabla}P
+\]
+\hline
+\vspace{2ex}
+Se posso trascurare gli attriti vale l' equazione di Crocco \cref{eq:crocco}
+\begin{gather*}
+  \pdev{\underline{u}_j}{t}- \left( \underline{u}\times \underline{\omega}\right) _j + \pdev{}{x_j}\left( \frac{1}{2}u^2\right) +\frac{1}{\rho }\pdev{P}{x_j}+\pdev{\phi }{x_j}=0\\
+  \pdev{\underline{u}}{t}-\underline{u}\times \underline{\omega}+\underline{\nabla}\left( \frac{1}{2}u^2\right)  + \underline{\nabla}\displaystyle{\int_{P_0}^{P}} \frac{dP'}{\rho }+ \underline{\nabla}\phi =0\\
+  \pdev{\underline{u}}{t} - \underline{u}\times \underline{\omega} + \underline{\nabla}\left\underbrace{( \frac{1}{2}u^2+\displaystyle{\int_{P_0}^{P}}\frac{dP^\prime}{\rho }+\phi \right)}_{\text{Trinomio B}} = 0 \to\\
+  \to \pdev{\underline{u}}{t}-\underline{u}\times \underline{\omega}+\underline{\nabla}B=0
+\end{gather*}
+Questa equazione costituisce la base per le tre versioni della prima forma del teorema di bernulli:
+\begin{enumerate}
+\item Campo stazionario, $ \pdev{\underline{u}}{t}=0 $ e irrotazionale $ \underline{\omega}=0 $ 
+  \[
+    \rightarrow \underline{\nabla}B=0 \to \frac{1}{2}u^2+\displaystyle{\int_{P_0}^{P}} \frac{{dP^\prime}}{\rho }+\phi = \operatorname{cost}
+  \]
+  Nell' ipotesi di $ \rho  $ costante, cioè di flusso incomprimibile 
+  \[
+    \frac{1}{2}u^2+\frac{{P-P_0}}{\rho }+\phi =\operatorname{cost} 
+  \]
+  Essendo la pressione definita a meno di una costante:
+  \[
+    \frac{1}{2}u^2 + \frac{P}{\rho }+\phi =\operatorname{cost} +\frac{P_0}{\rho }=\operatorname{cost}
+  \]
+  \begin{equation}
+    \rightarrow P + \frac{1}{2}\rho u^2+\rho \phi =\operatorname{cost}
+  \end{equation}
+\item Campo rotazionale $ \underline{\omega} \neq 0$ ma stazionario $  \pdev{\underline{u}}{t} = 0 $
+  \[
+\rightarrow \underline{u}\times \underline{\omega} = \underline{\nabla}B \to \underline{u}\times \underline{\omega} \parallelsum \underline{\nabla}B 
+\]
+Consideriamo superifici in cui $ \underline{\nabla}B = \operatorname{cost}  $ 
+\begin{equation}
+  \frac{1}{2}q^2+\displaystyle{\int_{}^{}}\frac{dP}{\rho }+gz = \operatorname{cost} 
+\end{equation}
+Costante ma solo su line di corrente e vorticose (su tutto solo se $ \underline{\omega}=0 $ 
+\item Campo irrotazionale $ \underline{\omega} = 0 $ e non stazionario $ \pdev{\underline{u}}{t} \neq 0 $
+  Dato che il campo è irrotazionale allora:
+  \[
+    \underline{\nabla}\times  \underline{u} = 0 \rightarrow \underline{u}=\underline{\nabla}\varphi 
+  \] 
+  \begin{gather*}
+    \pdev{\underline{u}}{t}+\underline{\nabla}B = 0 \\
+    \pdev{}{t}\underline{\nabla} \varphi +\underline{\nabla} B =0 \\
+    \underline{\nabla} \left( \pdev{}{t}\varphi +B \right) =0
+  \end{gather*}
+  \begin{equation}
+    \rightarrow \pdev{\varphi }{t}+B = \operatorname{cost} 
+  \end{equation}
+\end{enumerate}
+
+\section{Corrente ideale}
+Parliamo di corrente ideale quando il flusso è stazionario $ \pdev{\underline{u}}{t}=0 $, il flusso di calore è nullo $ \underline{q}=0 $ e $ \delta =\operatorname{cost}  $ 
+\begin{equation*}
+  \frac{D }{Dt}\left( \frac{1}{2}u^2+e\right) =u_ig_i+\frac{1}{\rho }\pdev{}{x_j}\left( u_i \tau_{ij} \right) +\cancel{\frac{1}{\rho }\pdev{}{x_i}q_i}
+\end{equation*}
+Prendo in esame il termine $ \frac{1}{\rho }\pdev{}{x_j}\left( u_i\tau_{ij} \right)  $:
+\begin{gather*}
+  \frac{1}{\rho }\pdev{}{x_j}\left( u_i\tau_{ij} \right) =\frac{1}{\rho }\left( -u_jP\delta_{ij} \right) +\cancel{\frac{1}{\rho }\pdev{}{x_j}\left( u_i \sigma_{ij}\right) }=\\
+  =-\frac{1}{\rho }\underline{\nabla} \cdot \left( \ddot{u}P = -\frac{1}{\rho }\left( \underline{u}\cdot \underline{\nabla} P+P\underline{\nabla} \cdot \underline{u}\right)=\\
+    = -\frac{1}{\rho }\frac{D P}{Dt}+\frac{P}{\rho ^2}\frac{D P}{Dt}=-\frac{D }{Dt}\left( \frac{P}{\rho }\right) 
+\end{gather*}
+Prendo in esame il termine $ u_ig_i $
+\begin{gather*}
+  u_ig_i = \underline{u}\cdot \underline{g} = -\underline{u}\cdot \underline{\nabla} \phi =-\frac{D \phi }{Dt} \\
+  \frac{D \phi }{Dt}=\pdev{\phi }{t}+u\cdot \underline{\nabla} \phi \\
+  \rightarrow \frac{D }{Dt}\left( \frac{1}{2}u^2+e\right) =-\frac{D \phi }{Dt}\frac{D }{Dt}\left( \frac{P}{\rho }\right) \rightarrow \\
+  \rightarrow \frac{D }{Dt} \underbrace{{\left( \frac{1}{2}u^2+e+\phi +\frac{P}{\rho }\right) }}_{H} = 0
+\end{gather*}
+  In generale le 4 componenti di $ H $ possono variare ma $ H $ è costante lungo una traiettoria, non cambia.
+\subsection{Tubo di Venturi}
+\begin{figure}[ht]
+    \centering
+    \incfig{venturi_tube}{}
+    \caption{Tubo di Venturi}
+    \label{fig:venturi_tube}
+\end{figure}
+In un tubo di venturi, nel canale stretto il fluido accelera e la pressione decresce quindi il foro centrale aspira. Così funzionano i carburatori. Questo è derivabile da $ H $
+\[
+  H = P + \frac{1}{2}\rho u^2+\rho \phi =\operatorname{cost} 
+\] 
+In un profilo alare, nel punto di ristagno ($ u=0 $) la pressione è massima. Poi sul dorso dell'ala accelera velocemente quindi la pressione diminuisce. Sul ventre l'accelerazione è minore quindi la pressione è maggiore la differenza di pressione genera portanza
+\subsection{Tubo di Pitot}
+\begin{figure}[ht]
+    \centering
+    \incfig{tubo_di_pitot}{}
+    \caption{Tubo di Pitot}
+    \label{fig:tubo_di_pitot}
+\end{figure}
+Per la legge di stevino 
+\begin{gather*}
+  P_1=P_{atm}+\rho g h_1\\
+  P_2=P_{atm}+\rho g h_2\\
+  P_2-P_1=\rho g \left( h_2-h_1\right) =\rho g \Delta h
+\end{gather*}
+Per la legge di Bernulli
+\begin{gather*}
+  \frac{1}{2}\rho u^2_1 + P_1 = \cancel{\frac{1}{2}\rho u^2_2} + P_2\\
+  P_2 -P_1 = \frac{1}{2}\rho u^2_1 = \rho g \Delta h\\
+  \rightarrow u_1 = \sqrt{\frac{{2\Delta P}}{\rho }}= \sqrt{{\rho g\Delta h}} 
+\end{gather*}
+Posso misurare $ u_1 $ con $ \Delta h $. Il tubo di Pitot però può misurare la velocità a Mach $ \approx 0 $. L' errore $ >1\% $ per Mach $ >0.3 $. Per questo motivo $ 0.3 $ è valore soglia di comprimibilità
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:
