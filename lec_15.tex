@@ -1,1 +1,58 @@
-\lecture{15}{ven 03 apr 2023 14:30}{Da fare: su goodnotes}
+\lecture{15}{ven 03 apr 2023 14:30}{Introduzione all'aerodinamica classica}
+Lungo un profilo alare abbiamo un profilo della velocità di un fluido che va come mostrato in figura:
+% TODO: Aggiungi figura e sistema la roba di inkscape, magari
+Lo strato intorno al profilo lungo il quale la velocità del fluido è nulla si chiama \emph{strato limite}.\\ 
+All'interno dello strato limite avremo 
+\[
+  \underline{\omega} = \underline{\nabla} \times \underline{u} \neq 0
+\]
+Fuori dallo strato limite invece:
+\[
+  \underline{\omega} = \underline{\nabla} \times \underline{u} = 0
+\]
+Inoltre ricordiamo che $  \underline{\omega} = \underline{\nabla}\times \underline{\omega} $ e che la divergenza del rotore è nulla sempre: $ \underline{\nabla}\cdot \underline{\omega}= \underline{\nabla}\cdot \left( \underline{\nabla}\times \underline{u} \right)$\[
+	\underline{\nabla}\times \dermat{\underline{u}}{t} = \underline{\nabla}\times(\cancel{-\frac{1}{\rho}\underline{\nabla}P} + \cancel{\cancel{g}} + \nu \nabla ^2 \underline{u}
+\]
+\[
+	\underline{\nabla}\times \dermat{\underline{u}}{t} = \underline{\nabla}\times \left( \nu \nabla ^2 \underline{u}
+ \right)\]
+ Altri equazioni rilevanti sono:
+ \begin{itemize}
+	 \item $ \underline{g} = \nabla \phi  \rightarrow \underline{\nabla}\times g = \underline{\nabla}\times \left(  \underline{\nabla} \phi \right) = 0$ 
+	 \item $ \frac{ \left( \underline{\nabla}\times \underline{\nabla}P \right)}{-\rho} = 0 $
+	 \item $ \underline{\nabla}\times \dermat{\underline{u}}{t} = \underline{\nabla}\times \pdev{\underline{u}}{t} + \underline{\nabla}\times \left( \underline{u}\cdot \underline{\nabla}\underline{u} \right) =\pdev{}{t}\left( \underline{\nabla}\times \underline{u} \right) + \underline{\nabla}\times \left(  \underline{u}\cdot \underline{\nabla}\underline{u} \right)$
+		 \[
+			 \rightarrow \underline{u}\cdot \underline{\nabla} u = u_j \pdev{u_i}{x_j} = u_j \pdev{u_i}{x_j} = u_j \left( \pdev{u_i}{x_j}-\pdev{u_j}{x_i} \right) + {u_j}\pdev{{u_j}}{{x_i}}=
+		 \]
+		 \[
+			 = {u_j}\varepsilon_{kjl} {\omega}_{k} + \pdev{}{{x_i}}\left( \frac{1}{2}{u_j}{u_j} \right) - \underline{{\omega}}{\times}\underline{u}+\underline{\nabla}\left( \frac{1}{2} u ^2 \right) 
+		 \]
+ \end{itemize}
+ Dunque troviamo che:
+ \[
+	 \rightarrow \underline{\nabla}{\times}\left( \underline{u}{\cdot}\underline{\nabla} \right) = \underline{\nabla}{\times}\left( \underline{{\omega}}{\times}\underline{u} \right) + \cancel{\underline{\nabla}{\times}\underline{\nabla}\left( \frac{1}{2} u ^2 \right)} = \underline{\nabla}{\times}\left( \underline{ {\omega}}{\times}\underline{u} \right)
+ \]
+ \[
+   \underline{\nabla}{\times}{\nabla}^2 \underline{u} = {\nabla}^2 \underline{\nabla}{\times}\underline{u}= {\nabla}^2 {\omega}
+ \]
+ \[
+	 \pdev{\underline{{\omega}}}{t} + \underline{\nabla}{\times} \left( \underline{{\omega}} {\times}\underline{u} \right) = {\nu}{\nabla}^2 \underline{u}
+ \]
+ Sfruttando l'identità vettoriale $ \underline{\nabla}{\times}\left( {\underline{\omega}}{\times} \underline{u} \right) = \underline{u}{\cdot}\underline{\nabla}{\omega}-{\underline{\omega}}{\cdot}\underline{\nabla}\underline{u} $
+ \[
+	 \pdev{\underline{{\omega}}}{t} + \underline{u}{\cdot}\underline{\nabla}{\omega}- \underline{{\omega}}{\cdot}\underline{\nabla}\underline{u}= {\nu}{\nabla}^2 \underline{u}
+ \]
+ Raggiungo così l'equazione
+ \begin{equation}
+   \dermat{\underline{{\omega}}}{t} = \underline{{\omega}} {\cdot} \underline{\nabla}\underline{u}+ {\nu}\underline{\nabla}^2 \underline{u}
+ \end{equation}
+ Il primo termine di questa equazione inidica il \emph{vortex stretching}, cioè quanto si allargano i vortici mentre il secondo termine è il termine \emph{viscoso}.
+
+\section{Circolazione}
+La circolazione $ {\Gamma} $ è la circuitazione della velocità.
+\[
+  {\Gamma} ={ \integral{C}{}{\underline{u}}{\underline{x}}  }  = { \integral{A}{}{\underline{\nabla}{\times}\underline{u}}{A}  } = \integral{A}{}{\underline{{\omega}}}{A}
+\]
+\[
+  {\Gamma} = \integral{C}{}{\underline{n}}{\underline{x}}
+\]

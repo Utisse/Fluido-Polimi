@@ -1,11 +1,63 @@
-\lecture{14}{mar 28 mar 2023 14:30}{Da fare: su goodnotes}
+\lecture{14}{mar 28 mar 2023 14:30}{!!Fare Foto di questi appunti!!}
 \subsection{Soluzioni analitiche dipendenti dal tempo}
 Considero una lamina piana infinita:
 %TODO : inserisci il grafico di pagina 29, una lastra con fluido sopra
 Il movimento della lamina può essere verticale o orizzontale: se verticale si propagano delle onde di pressione, se orizzontale c'è una diffusione delle onde di pressione (i tempi in questo secondo caso sono più lunghi).\\
 Consideriamo un movimento instantaneo (a $ t = 0 $, $ \pdev{u}{t} = + \infty$).
 Inoltre come ipotesi aggiuntive $ P \to P_ \infty $ per $ y \to \infty $ e $ \pdev{u}{x}=0 $.\\
-Risolvo analiticamente
+Risolvo analiticamente:\\
+Per l'equazione di continuità \cref{eq:continuità}:
+\[
+  \cancel{\pdev{u}{x}} + \pdev{v}{y} = 0 \rightarrow \pdev{v}{y}=0 \rightarrow V =\costante = 0   
+\]
+Che equivale all'imporre la no slip condition. 
+Analizzo le equazioni di navier stokes \cref{eq:NV_comp_vett}:
+\begin{equation*}
+  \begin{cases}
+	  \rho \pdev{u}{t}+ \rho \cancel{u \pdev{u}{x}} + \rho \cancel{v \pdev{u}{y}} = - \pdev{P}{x} + \mu \left(  \cancel{\pdev{^2u}{x^2}} + \pdev{^2u}{y^2}\right)  \\
+	  \rho \cancel{\pdev{v}{t}}+ \rho \cancel{v \pdev{v}{y}} + \rho \cancel{v \pdev{v}{y}} = - \pdev{P}{y} + \mu \cancel{\left(  \cancel{\pdev{^2u}{x^2}} + \pdev{^2u}{y^2}\right)} \rightarrow \pdev{P}{y} = 0 \rightarrow P = \costante 
+  \end{cases}
+\end{equation*}
+Queste equazioni mi portano a trovare la seguente:
+\[
+  \rho \pdev{u}{t}= \mu \pdev{^2u}{y^2} \rightarrow \pdev{u}{t} = \nu \pdev{^2u}{y^2} 
+\]
+Le condizioni accessorie sono:
+\begin{align*}
+	&u \left( y,t=0 \right)=0\\
+	&\begin{cases}
+	  u \left(  y =0,t) \right) = 
+	  \begin{cases}
+	    0 \qquad t \leq 0\\
+	    U \qquad t > 0 
+	  \end{cases}\\
+         u \left( y \to \infty,t \right)=0
+	\end{cases}
+\end{align*}
+La prima delle condizioni al contorno (di quelle all'interno della parentesi graffa) diche che il fluido segue la parete quando è vicino alla lamina, la seconda che lontano dalla lamina il fluido è fermo.
+Per similitudine con $ y,\,t,\,u, $ variabili e $ \nu $ parametro.  
+\[
+  \eta= \frac{y}{\sqrt{\nu t}}
+\]
+con $ \delta = \sqrt{\nu t} $. Ora definisco 
+\[
+	u ^* = \frac{u }{U}= F \left( \eta \right) 
+\]
+\begin{enumerate}
+  \item
+	  \[
+	  \pdev{u}{t}= \pdev{u ^*}{t} = U \pdev{F}{\eta}\pdev{\eta}{t}= -\frac{1}{2}\frac{y U}{\sqrt{\nu t ^2}}\frac{\diff F}{\diff \eta} 
+	  \]
+  \item 
+	  \[
+		  U \pdev{^2u}{y^2} = \nu U \pdev{}{y}\left( \frac{\diff F}{\diff y} \right) = \nu U \pdev{}{y}\left( \frac{\diff F}{\diff \eta}\frac{\diff \eta}{\diff y} \right) = \nu U \pdev{}{y}\left( \frac{\diff F}{\diff \eta}\frac{1}{\sqrt{\nu t}} \right) = 
+	  \]
+\end{enumerate}
+
+
+
+
+%TODO: Ci sono delle cose che mancano da questi appunti, fai le foto o comunque recupera in qualche modo
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "master"
