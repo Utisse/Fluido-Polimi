@@ -1,2 +1,63 @@
-\lecture{16}{mar 04 apr 2023 14:30}{Da fare: foto appunti}
+\lecture{16}{mar 04 apr 2023 14:30}{!!WIP!! --- Da fare: foto appunti}
+\subsection{Teorema di Helmoltz}
+Se tento di calcolare la circolazione su tutta la superficie:
+\[
+  {\Gamma}= \integral{A}{}{\underline{{\omega}}{\cdot}\underline{n}}{A} = 0
+\]
+\[
+  \integral{A}{}{\underline{{\omega}}{\cdot}\underline{n}}{A} = \integral{V}{}{\underline{\nabla}{\cdot}\underline{{\omega}}}{V} = \integral{V}{}{\underline{\nabla}{\cdot}\underline{\nabla}{\times}\underline{u}}{V} = 0
+\]
+\[
+  A = A _{\text{in}} + A _{\text{out}} + A _{\text{ext}}
+\]
+\[
+  {\Gamma}= \integral{A_ \text{in}}{}{\underline{{\omega}}{\cdot}\underline{n}}{A}+ \integral{A_ \text{out}}{}{\underline{{\omega}}{\cdot}\underline{n}}{A} =   -{\Gamma}_{\text{in}} + {\Gamma}_{\text{out}}=0
+\]
+e dunque:
+\[
+	\boxed{{\Gamma}_{\text{in}} = {\Gamma}_{\text{out}}}
+\]
+Le ipotesi sono quelle dell'aerodinamica classica, dunque trascuro la dissipazione.
+\begin{itemize}
+  \item Tutta la struttura viene trasportata quando si muove il fluido
+  \item Le linee sono o infinite o si chiudono ad anello (per ip. dell'aerodinamca classica)
+  \item Una linea è costante nel tempo
+\end{itemize}
+\subsection{Equazioni del flusso potenziale}
+Considero $ {\rho}=\costante $ in tutto il campo. Dunque
+\[
+  \underline{\nabla}{\cdot}\underline{u} = 0 \quad \underline{\nabla}{\times}\underline{u} = 0
+\]
+Per la vorticità $ {\omega} $ trovo:
+\[
+	\pdev{{u_x}}{x} + \pdev{{u_y}}{y}=0 i
+\]
+  \[
+     \exists \psi \text{ t.c. } {u_x} = \pdev{\psi}{y} \quad {u_y} = - \pdev{\psi}{x}
+  \]
+La funzione $ \psi $ viene chiamata \emph{funzione di corrente} (o \emph{stream function} in inglese).
+\[
+  {\omega}_{z} = \pdev{{u_y}}{x}- \pdev{{u_x}}{y} = -{\nabla}^2\psi 
+\]
+E se $ \underline{{\omega}} = 0 $ allora:
+\[
+  {\nabla}^2\psi = 0
+\]
+Questa funzione non vede strato limite e scia ma è un'equazione lineare, permette di non tirare in ballo le equazioni di Navier-Stokes.
 
+Data la simmetria matematica del problema, per la velocità $ u $:
+\[
+	{\omega}_{z} = \pdev{{u_y}}{x} - \pdev{{u_x}}{y} \rightarrow \exists {\phi} \text{ t.c. } {u_x} = \pdev{{\phi}}{x} \quad {u_y} = \pdev{{\phi}}{y} 
+\]
+La funzione $ {\phi} $ viene chiamata \emph{potenziale} 
+\[
+  \pdev{{u_x}}{x}+ \pdev{{u_y}}{y} = 0
+\]
+dunque dato $ \underline{\nabla}{\cdot}\underline{u} =0$ trovo che:
+\[
+  {\nabla}^2 {\phi} = 0
+\]
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: master
+%%% End:

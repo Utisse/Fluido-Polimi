@@ -1,4 +1,4 @@
-\lecture{15}{ven 03 apr 2023 14:30}{Introduzione all'aerodinamica classica}
+\lecture{15}{ven 03 apr 2023 14:30}{Aerodinamica classica, Circuitazione}
 Lungo un profilo alare abbiamo un profilo della velocità di un fluido che va come mostrato in figura:
 % TODO: Aggiungi figura e sistema la roba di inkscape, magari
 Lo strato intorno al profilo lungo il quale la velocità del fluido è nulla si chiama \emph{strato limite}.\\ 
@@ -54,5 +54,67 @@ La circolazione $ {\Gamma} $ è la circuitazione della velocità.
   {\Gamma} ={ \integral{C}{}{\underline{u}}{\underline{x}}  }  = { \integral{A}{}{\underline{\nabla}{\times}\underline{u}}{A}  } = \integral{A}{}{\underline{{\omega}}}{A}
 \]
 \[
-  {\Gamma} = \integral{C}{}{\underline{n}}{\underline{x}}
+  {\Gamma} = \integral{C}{}{\underline{n}}{\underline{x}} = \integral{C}{}{{u_i}}{{x_i}}
+\]
+\[
+  \dermat{{\Gamma}}{t} = \dermat{}{t} \integral{C}{}{{u_i}}{{x_i}} = \integral{C}{}{\dermat{{u_i}}{t}}{{x_i}} + \integral{C}{}{{u_i \dermat{}{t}}}{{x_i}}
+\]
+Il secondo termine della somma, $ \integral{C}{}{{u_i \dermat{}{t}}}{{x_i}} $ si sviluppa nel seguente modo:
+\[
+	\integral{C}{}{{u_i}}{{u_i}} = \integral{C}{}{}{\left( \frac{1}{2} {u_i}{u_i} \right)} = \integral{C}{}{}{\left( \frac{1}{2} u ^2 \right)} = \left.  \frac{1}{2} u ^2\right|_{P_1}^{P_1} = 0 
+\]
+Il secondo termine invece $ \integral{C}{}{\dermat{{u_i}}{t}}{{x_i}} $:
+\[
+	\integral{C}{}{\dermat{{u_i}}{t}}{{x_i}} = \integral{C}{}{-\frac{1}{{\rho}}\pdev{P}{{x_i}}+g_i+\frac{1}{{\rho}}\pdev{\sigma_{ij}}{{x_j}}}{{x_i}}
+\]
+continuando con lo sviluppo:
+\[
+	\cancel{\integral{C}{}{\left( - \frac{1}{{\rho}} \right)}{P}} + \cancel{\integral{C}{}{}{{\phi}}} + \integral{C}{}{\frac{1}{{\rho}} \pdev{\sigma_{ij}}{{x_j}}}{{x_i}} 
+\]
+\subsection{Teorema di Kelvin}
+L'ultimo termine restante dipende dal coefficiente di viscosità.
+Se la viscosità è trascurabile allora raggiungo finalmente il \emph{teorema di Kelvin}.
+Per un flusso, trascurando l'attrito o comunque considerandolo nullo:
+\begin{equation}
+	\label{eq:teo_kelvin}
+	\dermat{{\Gamma}}{t} = 0
+\end{equation}
+Questo teorema spiega i vortici in scia di un velivolo. 
+Nel caso l'attrito non sia nullo allora:
+\[
+	\underline{\nabla}{\cdot}\underline{u} = 0 \quad {\nabla}{\times}u = 
+	\begin{cases}
+	  0\\
+		\costante
+	\end{cases}
+\]
+\[
+  \pdev{\sigma_{ij}}{t} = {\mu} {\nabla}^2 \underline{u}= -{\mu}\underline{\nabla}{\times}\underline{{\omega}}
+\]
+Il termine $ \underline{\nabla}{\times}\underline{{\omega}} $ è nullo se $ \underline{{\omega}} = 0 $ oppure se $ \underline{{\omega}} = \costante $.
+
+\subsection{Linea Vorticosa}
+La definizione di linea vorticosa è:
+\[
+  \frac{\diff x}{{\omega}_{x}} = \frac{\diff y}{{\omega}_{y}} = \frac{\diff z}{{\omega}_{z}}
+\]
+\[
+  {\omega}_{{\theta}} = \frac{{\omega}_{r}}{2} = {\Omega} r
+\]
+Abbiamo una \emph{Rotazione Rigida} se:
+\[
+  {\omega} = \underline{\nabla}{\times}\underline{u} \neq0
+\]
+Oppure un \emph{vortice irrotazionale} se:
+\[
+  u _{{\theta}} = \frac{{\Gamma}}{2 {\pi}r} \quad u_r=0
+\]
+\[
+  {\omega} = \underline{\nabla}{\times}\underline{u}=0
+\]
+Il centro della rotazione (dove $ u_{{\theta}}= \infty $) si dice \emph{singolarità}.
+\subsubsection{Tubo vorticoso}
+Analogo del tubo di flusso per la velocità:
+\[
+  {\Gamma}= \oint \underline{u}\space \diff \underline{x}
 \]
