@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./main.pdf
-          asset_name: main.pdf
+          asset_path: ./appunti_fluido.pdf
+          asset_name: appunti_fluido.pdf
           asset_content_type: pdf
             
