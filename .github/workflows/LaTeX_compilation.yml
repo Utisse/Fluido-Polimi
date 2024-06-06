@@ -1,7 +1,9 @@
 name: Build LaTeX document
-on: push
-  tags:
-        - '*.*.*' # semantic versioning 
+on: 
+  push:
+    tags:
+      - '*.*.*' # semantic versioning 
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
