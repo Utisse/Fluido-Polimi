@@ -1,8 +1,5 @@
 name: Build LaTeX document
-on: 
-  push:
-    tags:
-      - '*.*.*' # semantic versioning 
+on: push
 
 jobs:
   build_latex:
