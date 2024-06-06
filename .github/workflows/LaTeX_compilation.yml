@@ -1,6 +1,6 @@
 name: Build LaTeX document
 on: 
-  push
+  push:
     tags:
       - '*.*.*'
 jobs:
