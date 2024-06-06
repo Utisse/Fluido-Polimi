@@ -1,6 +1,6 @@
 name: Build LaTeX document
 on: 
-    tags:
+  tags:
         - '*.*.*' # semantic versioning 
 jobs:
   build_latex:
@@ -11,3 +11,6 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
+          root_file: |
+            master.tex
+            
