@@ -11,6 +11,5 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: |
-            master.tex
+          root_file: master.tex
             
