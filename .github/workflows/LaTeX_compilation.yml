@@ -13,6 +13,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: master.tex
+          args: -pdf -interaction=nonstopmode
 
       - name: Create Release
         id: create_release
